@@ -1,0 +1,27 @@
+<%- include("partials/header") %>
+
+<div class="container mt-4">
+  <h2 class="text-center">Employee List</h2>
+  <table class="table table-striped mt-4">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% employees.forEach(employee => { %>
+        <tr>
+          <td><%= employee.name %></td>
+          <td>Rs. <%= employee.salary %></td>
+          <td>
+            <a href="/salary/view/<%= employee.name %>" class="btn btn-primary btn-sm">View</a>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>
+
+<%- include("partials/footer") %>

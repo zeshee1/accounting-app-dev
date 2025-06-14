@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Customer History: <%= customer.name %> | Saddiqi Brothers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background-image: url('/img/bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            min-height: 100vh; /* Ensure body takes full height */
+        }
+
+        /* Sidebar styles from salary.ejs */
+        .sidebar {
+            background-color: #343a40;
+            color: white;
+            padding-top: 20px;
+            width: 250px;
+            min-width: 250px;
+            transition: width 0.3s ease;
+            position: fixed;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+        }
+
+        .sidebar-title {
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .sidebar a {
+            padding: 12px 20px;
+            display: block;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+
+        .sidebar a i {
+            margin-right: 10px;
+        }
+
+        /* Main content area adjustment */
+        .content-wrapper {
+            margin-left: 450px;
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+        }
+
+        /* Adjust container to be centered and have max-width */
+        /* Container ki max-width ko badhaya hai taake table ko zyada space mile */
+        .container {
+            max-width: 1100px; /* Increased max-width */
+            width: 150%; /* Take full width within its parent */
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-left: auto; /* Center the container */
+            margin-right: auto; /* Center the container */
+        }
+
+        .card {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+        }
+
+        .card-header {
+            background-color: #0d6efd;
+            color: white;
+            font-weight: bold;
+            font-size: 1.15em; /* Slightly larger header font */
+        }
+
+        .profile-img-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Increased gap between images */
+            margin-bottom: 30px;
+            flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+            align-items: flex-start; /* Align items to the start of the cross axis */
+        }
+
+        .profile-img-container .img-wrapper {
+            position: relative;
+            display: inline-block;
+            border: 4px solid #fff;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            border-radius: 0;
+            flex-shrink: 0;
+            flex-grow: 0;
+        }
+
+        .profile-img-container .img-wrapper img {
+            width: 400px; /* Increased size for readability */
+            max-width: 100%; /* Ensure responsiveness on smaller screens */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: contain; /* Ensure entire image is visible, not cropped */
+            border-radius: 0; /* Make it rectangular */
+            display: block;
+        }
+        
+        /* Table ko center mein karne aur width badhane ke liye */
+        .detail-table {
+            width: 100%; /* Table ko poori available width dene ke liye */
+            margin-left: auto; /* Table ko center karne ke liye */
+            margin-right: auto; /* Table ko center karne ke liye */
+        }
+
+        .detail-table th {
+            width: 35%; /* Slightly more width for labels */
+            background-color: #f8f9fa;
+            font-weight: 600; /* Bolder labels */
+        }
+
+        .detail-table td {
+            width: 65%;
+            word-wrap: break-word; /* Prevent long content from overflowing */
+        }
+
+        .table-responsive {
+            margin-top: 20px;
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: #e2f0ff; /* Light blue on hover for tables */
+        }
+
+        /* Back button styling */
+        .back-button-container {
+            text-align: right;
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="d-flex">
+        <div class="sidebar">
+            <h3 class="sidebar-title"><i class="fas fa-tachometer-alt me-2"></i> Menu</h3>
+            <a href="/" class="active"><i class="fas fa-home me-2"></i> Home</a>
+            <a href="/report/product-wise-revenue" class="btn"><i class="fas fa-chart-pie me-2"></i> Product-wise Revenue</a>
+            <a href="/purchase/all"><i class="fas fa-truck me-2"></i> Purchase Summary</a>
+            <a href="/purchase"><i class="fas fa-truck-loading me-2"></i> Add Purchase</a>
+            <a href="/invoice"><i class="fas fa-file-invoice me-2"></i> Create Invoice</a>
+            <a href="/invoice/all"><i class="fas fa-list-alt me-2"></i> View All Invoices</a>
+            <a href="/expense"><i class="fas fa-coins me-2"></i> Add Expense</a>
+            <a href="/expense/all"><i class="fas fa-list-ul me-2"></i> View Expenses</a>
+            <a href="/salary" class=""><i class="fas fa-user-tie me-2"></i> Salary Management</a>
+            <a href="/summary-form"><i class="fas fa-calendar-day me-2"></i> Daily Summary</a>
+            <a href="/customers"><i class="fas fa-users me-2"></i> Customer Details</a>
+            <a href="/salary-report"><i class="fas fa-chart-line me-2"></i> Salary Report</a>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="container py-4">
+                <div class="back-button-container">
+                    <a href="/customers" class="btn btn-secondary"><i class="fas fa-arrow-left me-2"></i> Back to Customer List</a>
+                </div>
+                
+                <h1 class="text-center text-primary mb-4">Customer History: <%= customer.name %></h1>
+
+                <% if (customer) { %>
+                    <div class="profile-img-container">
+                        <% if (customer.idDocumentPicture) { %>
+                            <div class="img-wrapper">
+                                <img src="/uploads/<%= customer.idDocumentPicture %>" alt="ID Document Picture" class="img-thumbnail" />
+                            </div>
+                        <% } else { %>
+                            <div class="img-wrapper">
+                                <img src="/img/placeholder-id.png" alt="ID Document Not Available" class="img-thumbnail" />
+                            </div>
+                        <% } %>
+
+                        <% if (customer.customerPicture) { %>
+                            <div class="img-wrapper">
+                                <img src="/uploads/<%= customer.customerPicture %>" alt="Customer Picture" class="img-thumbnail" />
+                            </div>
+                        <% } else { %>
+                            <div class="img-wrapper">
+                                <img src="/img/placeholder-customer.png" alt="Customer Picture Not Available" class="img-thumbnail" />
+                            </div>
+                        <% } %>
+                    </div>
+
+                    <div class="card shadow mb-4">
+                        <div class="card-header bg-primary text-white">Personal Information</div>
+                        <div class="card-body">
+                            <table class="table table-bordered detail-table">
+                                <tbody>
+                                    <tr>
+                                        <th>Code</th>
+                                        <td>
+                                            <%= customer.code %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Name</th>
+                                        <td>
+                                            <%= customer.name %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Phone Number</th>
+                                        <td>
+                                            <%= customer.phone %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>ID Card Number</th>
+                                        <td>
+                                            <%= customer.idCardNumber || '-' %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Passport Number</th>
+                                        <td>
+                                            <%= customer.passportNumber || '-' %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>ID Card Expiry</th>
+                                        <td>
+                                            <%= customer.idCardExpiry || '-' %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Passport Expiry</th>
+                                        <td>
+                                            <%= customer.passportExpiry || '-' %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Nationality</th>
+                                        <td>
+                                            <%= customer.nationality || '-' %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Province</th>
+                                        <td>
+                                            <%= customer.province || '-' %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>City</th>
+                                        <td>
+                                            <%= customer.city || '-' %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Street Address</th>
+                                        <td>
+                                            <%= customer.streetAddress || '-' %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Secondary Contact Number</th>
+                                        <td>
+                                            <%= customer.contactNumber2 || '-' %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Email Address</th>
+                                        <td>
+                                            <%= customer.emailAddress || '-' %>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card shadow mb-4">
+                        <div class="card-header bg-info text-white">Vehicle Information</div>
+                        <div class="card-body">
+                            <table class="table table-bordered detail-table">
+                                <tbody>
+                                    <tr>
+                                        <th>Vehicle Type</th>
+                                        <td>
+                                            <%= customer.vehicleType || '-' %>
+                                        </td>
+                                    </tr>
+                                    <% if (customer.vehicleType && customer.vehicleType !== 'On Foot') { %>
+                                        <tr>
+                                            <th>Vehicle Model</th>
+                                            <td>
+                                                <%= customer.vehicleModel || '-' %>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Vehicle Plate Number</th>
+                                            <td>
+                                                <%= customer.vehiclePlateNumber || '-' %>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Vehicle Color</th>
+                                            <td>
+                                                <%= customer.vehicleColour || '-' %>
+                                            </td>
+                                        </tr>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card shadow">
+                        <div class="card-header bg-success text-white">Purchase History</div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-bordered align-middle">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Date</th>
+                                            <th>Item Description</th>
+                                            <th>Quantity</th>
+                                            <th>Price Per Kg</th>
+                                            <th>Final Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% if (customerPurchases && customerPurchases.length > 0) { %>
+                                            <% customerPurchases.forEach((purchase, index) => { %>
+                                                <tr>
+                                                    <td>
+                                                        <%= index + 1 %>
+                                                    </td>
+                                                    <td>
+                                                        <%= purchase.date %>
+                                                    </td>
+                                                    <td>
+                                                        <%= purchase.itemDescription %>
+                                                    </td>
+                                                    <td>
+                                                        <%= purchase.quantity %>
+                                                    </td>
+                                                    <td>
+                                                        <%= purchase.pricePerKg %>
+                                                    </td>
+                                                    <td>
+                                                        <%= purchase.finalAmount %>
+                                                    </td>
+                                                </tr>
+                                            <% }); %>
+                                        <% } else { %>
+                                            <tr>
+                                                <td colspan="6" class="text-center">No purchases found for this customer.</td>
+                                            </tr>
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                <% } else { %>
+                    <div class="alert alert-danger text-center" role="alert">
+                        Customer not found.
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

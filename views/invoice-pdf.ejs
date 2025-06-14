@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            font-size: 12px;
+        }
+        .invoice-box {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #eee;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        }
+        .company-info {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .company-info h2 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        .details, .products, .footer {
+            width: 100%;
+            margin-top: 15px;
+        }
+        .products {
+            border-collapse: collapse;
+        }
+        .products th, .products td {
+            padding: 6px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .products th {
+            font-weight: bold;
+        }
+        .footer {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .total-amount {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="invoice-box">
+        <div class="company-info">
+            <h2>Saddiqi Brothers Import Export Company</h2>
+            <p>Godown No.314 Kolu Wala Stop, Gujranwala.</p>
+            <p>Imran Saddiqi: 0345-7268345, 0300-7329534 | M. Sharif Saddiqi: 0034679139699</p>
+            <p>Email: saddiqibrothers@gmail.com</p>
+        </div>
+
+        <div class="details">
+            <p><strong>Invoice #:</strong> <%= invoice.invoiceNumber %></p>
+            <p><strong>Date:</strong> <%= invoice.date %></p>
+            <p><strong>Customer Name:</strong> <%= invoice.customerName %></p>
+            <p><strong>Customer Phone:</strong> <%= invoice.customerPhone %></p>
+            <p><strong>Salesman Name:</strong> <%= invoice.salesman %></p>
+        </div>
+
+        <table class="products">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Unit</th>
+                    <th>Unit Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% let grandTotal = 0; %>
+                <% if (invoice.products && invoice.products.length > 0) { %>
+                    <% invoice.products.forEach(product => {
+                        const total = product.quantity * product.price;
+                        grandTotal += total;
+                    %>
+                    <tr>
+                        <td><%= product.product === 'Other' ? product.customProduct : product.product %></td>
+                        <td><%= product.quantity %></td>
+                        <td><%= product.unit %></td>
+                        <td>Rs. <%= product.price.toFixed(2) %></td>
+                        <td>Rs. <%= total.toFixed(2) %></td>
+                    </tr>
+                    <% }); %>
+                <% } else if (invoice.quantity && invoice.price) { %>
+                    <tr>
+                        <td><%= invoice.product %></td>
+                        <td><%= invoice.quantity %></td>
+                        <td><%= invoice.unit %></td>
+                        <td>Rs. <%= invoice.price.toFixed(2) %></td>
+                        <td>Rs. <%= (invoice.quantity * invoice.price).toFixed(2) %></td>
+                    </tr>
+                    <% grandTotal += (invoice.quantity * invoice.price); %>
+                <% } %>
+            </tbody>
+        </table>
+
+        <div class="footer">
+            <p class="total-amount"><strong>Total Amount:</strong> Rs. <%= grandTotal.toFixed(2) %></p>
+            <p><strong>Salesman Signature:</strong> ________________________</p>
+        </div>
+    </div>
+
+</body>
+</html>

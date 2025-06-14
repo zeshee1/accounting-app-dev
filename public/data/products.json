@@ -1,0 +1,7 @@
+[
+  { "code": "ITM001", "name": "Copper Wire" },
+  { "code": "ITM002", "name": "Iron Scrap" },
+  { "code": "ITM003", "name": "Plastic Drum" },
+  { "code": "ITM004", "name": "Aluminum Can" },
+  { "code": "ITM005", "name": "Battery Scrap" }
+]

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Invoice - <%= invoice.invoiceNumber %></title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      padding: 40px;
+    }
+    h1, h2 {
+      color: #007BFF;
+    }
+    .company-info, .customer-info, .invoice-details {
+      margin-bottom: 20px;
+    }
+    .details-box {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    table, th, td {
+      border: 1px solid #aaa;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+    .total {
+      text-align: right;
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .signature {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Invoice</h1>
+
+  <div class="company-info">
+    <strong>Company:</strong> <%= company.name %><br>
+    <strong>Address:</strong> <%= company.address %><br>
+    <strong>Phone:</strong> <%= company.phone %><br>
+    <strong>Managing Directors:</strong> <%= company.directors.join(", ") %>
+  </div>
+
+  <div class="invoice-details">
+    <strong>Invoice #:</strong> <%= invoice.invoiceNumber %><br>
+    <strong>Date:</strong> <%= invoice.date %>
+  </div>
+
+  <div class="customer-info">
+    <strong>Customer Name:</strong> <%= invoice.customerName %><br>
+    <strong>Customer Phone:</strong> <%= invoice.customerPhone %>
+  </div>
+
+  <div class="details-box">
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Unit</th>
+          <th>Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= invoice.product %></td>
+          <td><%= invoice.quantity %></td>
+          <td><%= invoice.unit %></td>
+          <td><%= invoice.price %></td>
+          <td><%= invoice.total %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="total">
+    Total Amount: Rs. <%= invoice.total %>
+  </div>
+
+  <div class="signature">
+    <strong>Salesman Signature: ___________________</strong>
+  </div>
+
+</body>
+</html>

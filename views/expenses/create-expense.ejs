@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Expense | Saddiqi Brothers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .content {
+            flex-grow: 1;
+            padding: 30px;
+            transform: perspective(500px) translateZ(0px);
+            transition: transform 0.3s ease;
+        }
+        .content:hover {
+            transform: perspective(500px) translateZ(3px);
+        }
+        h1 {
+            text-align: center;
+            color: #283593;
+            margin-bottom: 30px;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        label {
+            font-weight: 600;
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+            margin-bottom: 20px;
+            display: inline-block;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 80px; /* Adjust as needed */
+        }
+        button[type="submit"] {
+            background-color: #3949ab;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            margin-top: 25px;
+            width: 100%;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #303f9f;
+        }
+        .back-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .back-link a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h3 class="sidebar-title"><i class="fas fa-tachometer-alt mr-2"></i> Menu</h3>
+        <a href="/"><i class="fas fa-home"></i> Home</a>
+        <a href="/sales"><i class="fas fa-shopping-cart"></i> Sales</a>
+        <a href="/purchase/all"><i class="fas fa-truck"></i> Purchase Summary</a>
+        <a href="/purchase"><i class="fas fa-truck"></i> Add Purchase</a>
+        <a href="/invoice"><i class="fas fa-file-invoice"></i> Create Invoice</a>
+        <a href="/invoice/all"><i class="fas fa-list-alt"></i> View All Invoices</a>
+        <a href="/expense" class="active"><i class="fas fa-coins"></i> Add Expense</a>
+        <a href="/expense/all"><i class="fas fa-list-ul"></i> View Expenses</a>
+        <a href="/summary-form"><i class="fas fa-calendar-day"></i> Daily Summary</a>
+        <a href="/customers"><i class="fas fa-users"></i> Customer Details</a>
+    </div>
+
+    <div class="content">
+        <h1>Add New Expense</h1>
+
+        <form action="/expense" method="POST">
+            <label for="title">Expense Title</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="amount">Amount (Rs.)</label>
+            <input type="number" id="amount" name="amount" step="0.01" required>
+
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="description">Description (Optional)</label>
+            <textarea id="description" name="description" rows="3"></textarea>
+
+            <button type="submit">Add Expense</button>
+        </form>
+
+        <div class="back-link">
+            <a href="/expense/all">View All Expenses</a> |
+            <a href="/">Home</a>
+        </div>
+    </div>
+</body>
+</html>

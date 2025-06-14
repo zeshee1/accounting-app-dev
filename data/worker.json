@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Zeshan",
+    "salary": 40000,
+    "designation": "IT MAnager",
+    "phone": "03065096791"
+  },
+  {
+    "name": "Bilal Mujahid ",
+    "salary": 65000,
+    "designation": "Salesman ",
+    "phone": "03206243882"
+  },
+  {
+    "name": "Asghar Ghori Sb",
+    "salary": 65000,
+    "designation": "Operational Manager",
+    "phone": "03047378401"
+  },
+  {
+    "name": "Nasir Sb",
+    "salary": 50000,
+    "designation": "Salesman ",
+    "phone": "03013822913"
+  },
+  {
+    "name": "Ijaz Muhammad",
+    "salary": 24000,
+    "designation": "Helper",
+    "phone": "03117639499"
+  },
+  {
+    "name": "Muhammad Arif",
+    "salary": 24000,
+    "designation": "Guard",
+    "phone": "03014512804"
+  }
+]

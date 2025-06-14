@@ -1,0 +1,1796 @@
+[
+  {
+    "id": 1745850718931,
+    "invoiceNumber": "INV-001",
+    "customerName": "Ghulam Mustafa ",
+    "customerPhone": "03004927075",
+    "salesman": "Bilal Mujahid",
+    "date": "4/28/2025",
+    "products": [
+      {
+        "product": "Dc Motor",
+        "quantity": 6.4,
+        "unit": "kg",
+        "price": 781
+      }
+    ]
+  },
+  {
+    "id": 1745986944573,
+    "invoiceNumber": "INV-002",
+    "customerName": "Irfan Sb",
+    "customerPhone": "03334667991",
+    "salesman": "Bilal Mujahid",
+    "date": "4/30/2025",
+    "products": [
+      {
+        "product": "Heat Gun",
+        "quantity": 0.8,
+        "unit": "kg",
+        "price": 2000
+      }
+    ]
+  },
+  {
+    "id": 1745986944573,
+    "invoiceNumber": "INV-003",
+    "customerName": "Abdul Rehman",
+    "customerPhone": "03213140257",
+    "salesman": "Bilal Mujahid",
+    "date": "4/30/2025",
+    "products": [
+      {
+        "product": "Auto part",
+        "quantity": 3,
+        "unit": "kg",
+        "price": 1000
+      }
+    ]
+  },
+  {
+    "id": 1745986944573,
+    "invoiceNumber": "INV-004",
+    "customerName": "Abdul Rehman",
+    "customerPhone": "03213140257",
+    "salesman": "Bilal Mujahid",
+    "date": "4/30/2025",
+    "products": [
+      {
+        "product": "Gear Motor",
+        "quantity": 7.1,
+        "unit": "kg",
+        "price": 700
+      }
+    ]
+  },
+  {
+    "id": 1746008319715,
+    "invoiceNumber": "INV-005",
+    "customerName": "Ali Muhammad",
+    "customerPhone": "03016691052",
+    "salesman": "Nasir Sb",
+    "date": "4/30/2025",
+    "products": [
+      {
+        "product": "Computer board",
+        "quantity": 1,
+        "unit": "pieces",
+        "price": 2500
+      }
+    ]
+  },
+  {
+    "id": 1746008492098,
+    "invoiceNumber": "INV-006",
+    "customerName": "Adil Lahore",
+    "customerPhone": "03344241940",
+    "salesman": "Nasir Sb",
+    "date": "4/30/2025",
+    "products": [
+      {
+        "product": "Power Supply",
+        "quantity": 0.6,
+        "unit": "kg",
+        "price": 1350
+      }
+    ]
+  },
+  {
+    "id": 1746017017359,
+    "invoiceNumber": "INV-007",
+    "customerName": "Amir ali",
+    "customerPhone": "03043334383",
+    "salesman": "Bilal Mujahid",
+    "date": "4/30/2025",
+    "products": [
+      {
+        "product": "iron and charger",
+        "quantity": 5.1,
+        "unit": "kg",
+        "price": 823
+      }
+    ]
+  },
+  {
+    "id": 1746021152405,
+    "invoiceNumber": "INV-008",
+    "customerName": "Arshad sb",
+    "customerPhone": "03221622536",
+    "salesman": "Bilal Mujahid",
+    "date": "4/30/2025",
+    "products": [
+      {
+        "product": "Lock, Iron, Scooty",
+        "quantity": 4.1,
+        "unit": "kg",
+        "price": 927
+      }
+    ]
+  },
+  {
+    "id": 1746089287480,
+    "invoiceNumber": "INV-012",
+    "customerName": "Ishaq Aali",
+    "customerPhone": "03046980648",
+    "salesman": "Bilal Mujahid",
+    "date": "5/1/2025",
+    "products": [
+      {
+        "product": "Iron Wire",
+        "quantity": 9.4,
+        "unit": "kg",
+        "price": 600
+      }
+    ]
+  },
+  {
+    "id": 1746089375585,
+    "invoiceNumber": "INV-013",
+    "customerName": "Mustafa ",
+    "customerPhone": "03154578987",
+    "salesman": "Bilal Mujahid",
+    "date": "5/1/2025",
+    "products": [
+      {
+        "product": "Iron press",
+        "quantity": 0.9,
+        "unit": "kg",
+        "price": 1000
+      }
+    ]
+  },
+  {
+    "id": 1746089735685,
+    "invoiceNumber": "INV-014",
+    "customerName": "Sahab Khan",
+    "customerPhone": "03416641760",
+    "salesman": "Bilal Mujahid",
+    "date": "5/1/2025",
+    "products": [
+      {
+        "product": "Chain Kupi",
+        "quantity": 20.8,
+        "unit": "kg",
+        "price": 630
+      }
+    ]
+  },
+  {
+    "id": 1746090425007,
+    "invoiceNumber": "INV-015",
+    "customerName": "Muhammad Athar",
+    "customerPhone": "03401417788",
+    "salesman": "Bilal Mujahid",
+    "date": "5/1/2025",
+    "products": [
+      {
+        "product": "Laptop",
+        "quantity": 2.4,
+        "unit": "kg",
+        "price": 2083
+      }
+    ]
+  },
+  {
+    "id": 1746090629538,
+    "invoiceNumber": "INV-016",
+    "customerName": "Sahab Khan",
+    "customerPhone": "03416641760",
+    "salesman": "Bilal Mujahid",
+    "date": "5/1/2025",
+    "products": [
+      {
+        "product": "Charger",
+        "quantity": 1,
+        "unit": "pieces",
+        "price": 400
+      }
+    ]
+  },
+  {
+    "id": 1746090759191,
+    "invoiceNumber": "INV-014",
+    "customerName": "Murtaza",
+    "customerPhone": "03026415826",
+    "salesman": "Bilal Mujahid",
+    "date": "5/1/2025",
+    "products": [
+      {
+        "product": "processor",
+        "quantity": 2,
+        "unit": "pieces",
+        "price": 650
+      }
+    ]
+  },
+  {
+    "id": 1746090782878,
+    "invoiceNumber": "INV-015",
+    "customerName": "Murtaza",
+    "customerPhone": "03026415826",
+    "salesman": "Bilal Mujahid",
+    "date": "5/1/2025",
+    "products": [
+      {
+        "product": "Hard Disk",
+        "quantity": 1,
+        "unit": "pieces",
+        "price": 3200
+      }
+    ]
+  },
+  {
+    "id": 1746090798982,
+    "invoiceNumber": "INV-016",
+    "customerName": "Murtaza",
+    "customerPhone": "03026415826",
+    "salesman": "Bilal Mujahid",
+    "date": "5/1/2025",
+    "products": [
+      {
+        "product": "Hard Disk",
+        "quantity": 1,
+        "unit": "pieces",
+        "price": 1800
+      }
+    ]
+  },
+  {
+    "id": 1746094688328,
+    "invoiceNumber": "INV-017",
+    "customerName": "Sajid sb",
+    "customerPhone": "03034772233",
+    "salesman": "Bilal Mujahid",
+    "date": "5/1/2025",
+    "products": [
+      {
+        "product": "Grinder Part",
+        "quantity": 1428,
+        "unit": "kg",
+        "price": 0.7
+      }
+    ]
+  },
+  {
+    "id": 1746100578037,
+    "invoiceNumber": "INV-018",
+    "customerName": "Muhammad Habib",
+    "customerPhone": "03216404390",
+    "salesman": "Bilal Mujahid",
+    "date": "5/1/2025",
+    "products": [
+      {
+        "product": "Jista",
+        "quantity": 184,
+        "unit": "kg",
+        "price": 540
+      }
+    ]
+  },
+  {
+    "id": 1746101423459,
+    "invoiceNumber": "INV-019",
+    "customerName": "Ghafoor Bhai",
+    "customerPhone": "03124584878",
+    "salesman": "Ashghar Bhai",
+    "date": "5/1/2025",
+    "products": [
+      {
+        "product": "Iron Scrap",
+        "quantity": 470,
+        "unit": "kg",
+        "price": 140
+      }
+    ]
+  },
+  {
+    "id": 1746296373184,
+    "invoiceNumber": "INV-020",
+    "customerName": "Nadeem Bhai",
+    "customerPhone": "03203679363",
+    "salesman": "Imran Sb",
+    "date": "5/3/2025",
+    "products": [
+      {
+        "product": "Silver Radiator",
+        "quantity": 330.5,
+        "unit": "kg",
+        "price": 555
+      }
+    ]
+  },
+  {
+    "id": 1746296458080,
+    "invoiceNumber": "INV-021",
+    "customerName": "Qaisar Sb",
+    "customerPhone": "03061862044",
+    "salesman": "Bilal Mujahid",
+    "date": "5/3/2025",
+    "products": [
+      {
+        "product": "Charger",
+        "quantity": 5.7,
+        "unit": "kg",
+        "price": 1370
+      }
+    ]
+  },
+  {
+    "id": 1746296511905,
+    "invoiceNumber": "INV-022",
+    "customerName": "Amanat Ali",
+    "customerPhone": "03083924916",
+    "salesman": "Bilal Mujahid",
+    "date": "5/3/2025",
+    "products": [
+      {
+        "product": "Plastic Tank",
+        "quantity": 6,
+        "unit": "kg",
+        "price": 300
+      }
+    ]
+  },
+  {
+    "id": 1746337093732,
+    "invoiceNumber": "INV-023",
+    "customerName": "Ahsan",
+    "customerPhone": "03007411254",
+    "salesman": "Bilal Mujahid",
+    "date": "5/4/2025",
+    "products": [
+      {
+        "product": "Dvr and HDMI switch",
+        "quantity": 1,
+        "unit": "pieces",
+        "price": 2500
+      }
+    ]
+  },
+  {
+    "id": 1746342597634,
+    "invoiceNumber": "INV-024",
+    "customerName": "imran",
+    "customerPhone": "03008135213",
+    "salesman": "Bilal Mujahid",
+    "date": "5/4/2025",
+    "products": [
+      {
+        "product": "Compressor",
+        "quantity": 131.4,
+        "unit": "kg",
+        "price": 520
+      }
+    ]
+  },
+  {
+    "id": 1746344000432,
+    "invoiceNumber": "INV-026",
+    "customerName": "Zain-ul- Abidin",
+    "customerPhone": "03206250016",
+    "salesman": "Bilal Mujahid",
+    "date": "5/4/2025",
+    "products": [
+      {
+        "product": "Power Supply",
+        "quantity": 3.6,
+        "unit": "kg",
+        "price": 1500
+      }
+    ]
+  },
+  {
+    "id": 1746344176590,
+    "invoiceNumber": "INV-027",
+    "customerName": "Zain-ul- Abidin",
+    "customerPhone": "03206250016",
+    "salesman": "Bilal Mujahid",
+    "date": "5/4/2025",
+    "products": [
+      {
+        "product": "Diary",
+        "quantity": 1,
+        "unit": "pieces",
+        "price": 300
+      }
+    ]
+  },
+  {
+    "id": 1746347067198,
+    "invoiceNumber": "INV-027",
+    "customerName": "Fahad",
+    "customerPhone": "03057894561",
+    "salesman": "Nasir Sb",
+    "date": "5/4/2025",
+    "products": [
+      {
+        "product": "Amplifier",
+        "quantity": 2.2,
+        "unit": "kg",
+        "price": 1545
+      }
+    ]
+  },
+  {
+    "id": 1746348306411,
+    "invoiceNumber": "INV-028",
+    "customerName": "Farooq Lahore",
+    "customerPhone": "03214735496",
+    "salesman": "Nasir Sb",
+    "date": "5/4/2025",
+    "products": [
+      {
+        "product": "Cd playe, Speaker Set and mini projector",
+        "quantity": 12.6,
+        "unit": "kg",
+        "price": 714
+      }
+    ]
+  },
+  {
+    "id": 1746349101228,
+    "invoiceNumber": "INV-029",
+    "customerName": "Jamshaid",
+    "customerPhone": "03204826245",
+    "salesman": "Bilal Mujahid",
+    "date": "5/4/2025",
+    "products": [
+      {
+        "product": "Scooty",
+        "quantity": 2.1,
+        "unit": "kg",
+        "price": 720
+      }
+    ]
+  },
+  {
+    "id": 1746358934607,
+    "invoiceNumber": "INV-030",
+    "customerName": "Yasir Ameen",
+    "customerPhone": "03167632075",
+    "salesman": "Bilal Mujahid",
+    "date": "5/4/2025",
+    "products": [
+      {
+        "product": "Amplifier",
+        "quantity": 2.5,
+        "unit": "kg",
+        "price": 1000
+      }
+    ]
+  },
+  {
+    "id": 1746434374050,
+    "invoiceNumber": "INV-031",
+    "customerName": "Ali sb",
+    "customerPhone": "03154879687",
+    "salesman": "Bilal Mujahid",
+    "date": "5/5/2025",
+    "products": [
+      {
+        "product": "Copper",
+        "quantity": 105.5,
+        "unit": "kg",
+        "price": 2520
+      }
+    ]
+  },
+  {
+    "id": 1746453655228,
+    "invoiceNumber": "INV-032",
+    "customerName": "Zia sb",
+    "customerPhone": "03468798787",
+    "salesman": "Nasir Sb",
+    "date": "5/5/2025",
+    "products": [
+      {
+        "product": "Drill Machine",
+        "quantity": 1.6,
+        "unit": "kg",
+        "price": 1125
+      }
+    ]
+  },
+  {
+    "id": 1746456043381,
+    "invoiceNumber": "INV-033",
+    "customerName": "Farak Khata",
+    "customerPhone": "789456123",
+    "salesman": "Saddiqi Brothers",
+    "date": "5/2/2025",
+    "products": [
+      {
+        "product": "Farak k liye bill ",
+        "quantity": 1,
+        "unit": "pieces",
+        "price": 197927
+      }
+    ]
+  },
+  {
+    "id": 1746514843440,
+    "invoiceNumber": "INV-034",
+    "customerName": "Nasir sb",
+    "customerPhone": "03218827675",
+    "salesman": "Bilal Mujahid",
+    "date": "5/6/2025",
+    "products": [
+      {
+        "product": "Grinder Part",
+        "quantity": 0.7,
+        "unit": "kg",
+        "price": 1150
+      }
+    ]
+  },
+  {
+    "id": 1746528584505,
+    "invoiceNumber": "INV-035",
+    "customerName": "Amir ali",
+    "customerPhone": "03043334381",
+    "salesman": "Bilal Mujahid",
+    "date": "5/6/2025",
+    "products": [
+      {
+        "product": "Battery",
+        "quantity": 7.1,
+        "unit": "kg",
+        "price": 1000
+      }
+    ]
+  },
+  {
+    "id": 1746528949492,
+    "invoiceNumber": "INV-036",
+    "customerName": "ali Butt",
+    "customerPhone": "03213140257",
+    "salesman": "Bilal Mujahid",
+    "date": "5/6/2025",
+    "products": [
+      {
+        "product": "camera and supply",
+        "quantity": 1.4,
+        "unit": "kg",
+        "price": 1785
+      }
+    ]
+  },
+  {
+    "id": 1746531963907,
+    "invoiceNumber": "INV-037",
+    "customerName": "Abdul Rehman",
+    "customerPhone": "03456490516",
+    "salesman": "Nasir Sb",
+    "date": "5/6/2025",
+    "products": [
+      {
+        "product": "Iron chisel  ",
+        "quantity": 2.8,
+        "unit": "kg",
+        "price": 400
+      }
+    ]
+  },
+  {
+    "id": 1746614772239,
+    "invoiceNumber": "INV-038",
+    "customerName": "Abdullah Silver Dealer",
+    "customerPhone": "03018053501",
+    "salesman": "Nasir Sb",
+    "date": "5/7/2025",
+    "products": [
+      {
+        "product": "Silver Router (Baby)",
+        "quantity": 615,
+        "unit": "kg",
+        "price": 170
+      }
+    ]
+  },
+  {
+    "id": 1746618457992,
+    "invoiceNumber": "INV-039",
+    "customerName": "Muhammad Abid",
+    "customerPhone": "03006443230",
+    "salesman": "Nasir Sb",
+    "date": "5/7/2025",
+    "products": [
+      {
+        "product": "battery and charger",
+        "quantity": 1.1,
+        "unit": "kg",
+        "price": 1455
+      }
+    ]
+  },
+  {
+    "id": 1746633779584,
+    "invoiceNumber": "INV-040",
+    "customerName": "Changgar Saain ",
+    "customerPhone": "03048945641",
+    "salesman": "Nasir Sb",
+    "date": "5/7/2025",
+    "products": [
+      {
+        "product": "Wastage (Kachra)",
+        "quantity": 2925,
+        "unit": "kg",
+        "price": 24
+      }
+    ]
+  },
+  {
+    "id": 1746711009226,
+    "invoiceNumber": "INV-041",
+    "customerName": "Khubaib bhai ",
+    "customerPhone": "03027525082",
+    "salesman": "Nasir Sb",
+    "date": "5/8/2025",
+    "products": [
+      {
+        "product": "Sarya Scrap",
+        "quantity": 1045,
+        "unit": "kg",
+        "price": 155
+      }
+    ]
+  },
+  {
+    "id": 1746711077244,
+    "invoiceNumber": "INV-042",
+    "customerName": "Air Tank",
+    "customerPhone": "03477469211",
+    "salesman": "Nasir Sb",
+    "date": "5/8/2025",
+    "products": [
+      {
+        "product": "Air Tank",
+        "quantity": 29.6,
+        "unit": "kg",
+        "price": 550
+      }
+    ]
+  },
+  {
+    "id": 1746711122780,
+    "invoiceNumber": "INV-043",
+    "customerName": "Abdul Rehman",
+    "customerPhone": "03496886605",
+    "salesman": "Nasir Sb",
+    "date": "5/8/2025",
+    "products": [
+      {
+        "product": "Steel Scrap",
+        "quantity": 435,
+        "unit": "kg",
+        "price": 240
+      }
+    ]
+  },
+  {
+    "id": 1746854475384,
+    "invoiceNumber": "INV-044",
+    "customerName": "Ubaid sb ",
+    "customerPhone": "03228595053",
+    "salesman": "Bilal Mujahid",
+    "date": "5/10/2025",
+    "products": [
+      {
+        "product": "Pump, Gear and motor",
+        "quantity": 37,
+        "unit": "kg",
+        "price": 850
+      }
+    ]
+  },
+  {
+    "id": 1746879332093,
+    "invoiceNumber": "INV-045",
+    "customerName": "yasin sb",
+    "customerPhone": "03156422496",
+    "salesman": "Bilal Mujahid",
+    "date": "5/10/2025",
+    "products": [
+      {
+        "product": "Charger",
+        "quantity": 1.2,
+        "unit": "kg",
+        "price": 1415
+      }
+    ]
+  },
+  {
+    "id": 1746880452307,
+    "invoiceNumber": "INV-046",
+    "customerName": "Khubaib bhai ",
+    "customerPhone": "03027525082",
+    "salesman": "Asghar bhai",
+    "date": "5/10/2025",
+    "products": [
+      {
+        "product": "Iron Scrap",
+        "quantity": 4060,
+        "unit": "kg",
+        "price": 142
+      }
+    ]
+  },
+  {
+    "id": 1746880575577,
+    "invoiceNumber": "INV-047",
+    "customerName": "Safdar sb",
+    "customerPhone": "03016573988",
+    "salesman": "Bilal Mujahid",
+    "date": "5/10/2025",
+    "products": [
+      {
+        "product": "Multi State Pump",
+        "quantity": 70.8,
+        "unit": "kg",
+        "price": 1000
+      }
+    ]
+  },
+  {
+    "id": 1746881225019,
+    "invoiceNumber": "INV-048",
+    "customerName": "Irfan Sb",
+    "customerPhone": "03224748831",
+    "salesman": "Bilal Mujahid",
+    "date": "5/10/2025",
+    "products": [
+      {
+        "product": "Generator Compressor",
+        "quantity": 19.3,
+        "unit": "kg",
+        "price": 850
+      }
+    ]
+  },
+  {
+    "id": 1746881325523,
+    "invoiceNumber": "INV-049",
+    "customerName": "Abid Bhai ",
+    "customerPhone": "03426123565",
+    "salesman": "Bilal Mujahid",
+    "date": "5/10/2025",
+    "products": [
+      {
+        "product": "Wheel Chair",
+        "quantity": 16.5,
+        "unit": "kg",
+        "price": 550
+      }
+    ]
+  },
+  {
+    "id": 1746881398264,
+    "invoiceNumber": "INV-050",
+    "customerName": "Liaqat Ali",
+    "customerPhone": "03144601844",
+    "salesman": "Bilal Mujahid",
+    "date": "5/10/2025",
+    "products": [
+      {
+        "product": "Grinder",
+        "quantity": 1.6,
+        "unit": "kg",
+        "price": 1300
+      }
+    ]
+  },
+  {
+    "id": 1746881581841,
+    "invoiceNumber": "INV-051",
+    "customerName": "Darwaish Ali",
+    "customerPhone": "03454847252",
+    "salesman": "Bilal Mujahid",
+    "date": "5/10/2025",
+    "products": [
+      {
+        "product": "Soft Silver",
+        "quantity": 80.6,
+        "unit": "kg",
+        "price": 650
+      }
+    ]
+  },
+  {
+    "id": 1746881648379,
+    "invoiceNumber": "INV-052",
+    "customerName": "Darwaish Ali",
+    "customerPhone": "03454847252",
+    "salesman": "Bilal Mujahid",
+    "date": "5/10/2025",
+    "products": [
+      {
+        "product": "Hard Silver",
+        "quantity": 280.7,
+        "unit": "kg",
+        "price": 630
+      }
+    ]
+  },
+  {
+    "id": 1746940868752,
+    "invoiceNumber": "INV-053",
+    "customerName": "Luqman sb",
+    "customerPhone": "03349345100",
+    "salesman": "Bilal Mujahid",
+    "date": "5/12/2025",
+    "products": [
+      {
+        "product": "Burner",
+        "quantity": 7.4,
+        "unit": "kg",
+        "price": 900
+      }
+    ]
+  },
+  {
+    "id": 1746951100917,
+    "invoiceNumber": "INV-054",
+    "customerName": "Muhammad Nadeem sb",
+    "customerPhone": "0320379363",
+    "salesman": "Nasir Sb",
+    "date": "5/12/2025",
+    "products": [
+      {
+        "product": "Brass",
+        "quantity": 49.6,
+        "unit": "kg",
+        "price": 1655
+      }
+    ]
+  },
+  {
+    "id": 1746953921094,
+    "invoiceNumber": "INV-055",
+    "customerName": "Abdul Wahab",
+    "customerPhone": "03136327900",
+    "salesman": "Bilal Mujahid",
+    "date": "5/12/2025",
+    "products": [
+      {
+        "product": "Computer Fan",
+        "quantity": 15,
+        "unit": "pieces",
+        "price": 100
+      }
+    ]
+  },
+  {
+    "id": 1747131522578,
+    "invoiceNumber": "INV-056",
+    "customerName": "Zain-ul- Abidin",
+    "customerPhone": "03206250016",
+    "salesman": "Bilal Mujahid",
+    "date": "5/13/2025",
+    "products": [
+      {
+        "product": "drill",
+        "quantity": 2.3,
+        "unit": "kg",
+        "price": 1400
+      },
+      {
+        "product": "inverter",
+        "quantity": 5.9,
+        "unit": "kg",
+        "price": 2000
+      }
+    ]
+  },
+  {
+    "id": 1747211254354,
+    "invoiceNumber": "INV-057",
+    "customerName": "Nadeem ",
+    "customerPhone": "03127271715",
+    "salesman": "Bilal Mujahid",
+    "date": "5/14/2025",
+    "products": [
+      {
+        "product": "Scooty",
+        "quantity": 7.1,
+        "unit": "kg",
+        "price": 900
+      }
+    ]
+  },
+  {
+    "id": 1747213506496,
+    "invoiceNumber": "INV-058",
+    "customerName": "Muhmmad Azam",
+    "customerPhone": "03016443426",
+    "salesman": "Bilal Mujahid",
+    "date": "5/14/2025",
+    "products": [
+      {
+        "product": "Wrench and measuring Tape",
+        "quantity": 3.5,
+        "unit": "kg",
+        "price": 857
+      }
+    ]
+  },
+  {
+    "id": 1747213615395,
+    "invoiceNumber": "INV-059",
+    "customerName": "Fareed sb",
+    "customerPhone": "03237424436",
+    "salesman": "Bilal Mujahid",
+    "date": "5/14/2025",
+    "products": [
+      {
+        "product": "Blower and drill",
+        "quantity": 3.5,
+        "unit": "kg",
+        "price": 1200
+      }
+    ]
+  },
+  {
+    "id": 1747384897691,
+    "invoiceNumber": "INV-060",
+    "customerName": "Murtaza",
+    "customerPhone": "03026415826",
+    "salesman": "Nasir Sb",
+    "date": "5/17/2025",
+    "products": [
+      {
+        "product": "Hard Disk",
+        "quantity": 1,
+        "unit": "pieces",
+        "price": 2600
+      },
+      {
+        "product": "Hard Disk",
+        "quantity": 1,
+        "unit": "pieces",
+        "price": 1200
+      },
+      {
+        "product": "Power Supply",
+        "quantity": 1,
+        "unit": "pieces",
+        "price": 6000
+      },
+      {
+        "product": "Hard Disk",
+        "quantity": 1,
+        "unit": "pieces",
+        "price": 3400
+      }
+    ]
+  },
+  {
+    "id": 1747389423913,
+    "invoiceNumber": "INV-061",
+    "customerName": "Farhan",
+    "customerPhone": "03209940200",
+    "salesman": "Asghar bhai",
+    "date": "5/17/2025",
+    "products": [
+      {
+        "product": "Dumbles",
+        "quantity": 10,
+        "unit": "kg",
+        "price": 300
+      }
+    ]
+  },
+  {
+    "id": 1747462656626,
+    "invoiceNumber": "INV-062",
+    "customerName": "Saba Sadiq",
+    "customerPhone": "03134568794",
+    "salesman": "Bilal Mujahid",
+    "date": "5/17/2025",
+    "products": [
+      {
+        "product": "Copper",
+        "quantity": 152.6,
+        "unit": "kg",
+        "price": 2510
+      }
+    ]
+  },
+  {
+    "id": 1747470787613,
+    "invoiceNumber": "INV-063",
+    "customerName": "Khurram",
+    "customerPhone": "03007531118",
+    "salesman": "Bilal Mujahid",
+    "date": "5/17/2025",
+    "products": [
+      {
+        "product": "processor",
+        "quantity": 2,
+        "unit": "pieces",
+        "price": 1000
+      },
+      {
+        "product": "computer board",
+        "quantity": 1,
+        "unit": "pieces",
+        "price": 1500
+      },
+      {
+        "product": "Hard Disk",
+        "quantity": 1,
+        "unit": "pieces",
+        "price": 2500
+      }
+    ]
+  },
+  {
+    "id": 1747472684705,
+    "invoiceNumber": "INV-064",
+    "customerName": "Murtaza",
+    "customerPhone": "03026415826",
+    "salesman": "Bilal Mujahid",
+    "date": "5/17/2025",
+    "products": [
+      {
+        "product": "Power Supply",
+        "quantity": 4.4,
+        "unit": "kg",
+        "price": 3070
+      }
+    ]
+  },
+  {
+    "id": 1747479901435,
+    "invoiceNumber": "INV-065",
+    "customerName": "Imran sb",
+    "customerPhone": "03237715946",
+    "salesman": "Bilal Mujahid",
+    "date": "5/17/2025",
+    "products": [
+      {
+        "product": "Shawer Pipe ",
+        "quantity": 258.7,
+        "unit": "kg",
+        "price": 550
+      }
+    ]
+  },
+  {
+    "id": 1747544967805,
+    "invoiceNumber": "INV-066",
+    "customerName": "zeshan",
+    "customerPhone": "03065096791",
+    "salesman": "Bilal Mujahid",
+    "date": "5/18/2025",
+    "products": [
+      {
+        "product": "Iron Chain",
+        "quantity": 28.7,
+        "unit": "kg",
+        "price": 500
+      }
+    ]
+  },
+  {
+    "id": 1747545011752,
+    "invoiceNumber": "INV-067",
+    "customerName": "Asghar Chishti",
+    "customerPhone": "03203679363",
+    "salesman": "Bilal Mujahid",
+    "date": "5/18/2025",
+    "products": [
+      {
+        "product": "Car Self",
+        "quantity": 6.2,
+        "unit": "kg",
+        "price": 800
+      }
+    ]
+  },
+  {
+    "id": 1747546702983,
+    "invoiceNumber": "INV-068",
+    "customerName": "Mubeen Ahmed",
+    "customerPhone": "03168090049",
+    "salesman": "Bilal Mujahid",
+    "date": "5/18/2025",
+    "products": [
+      {
+        "product": "Breaker",
+        "quantity": 0.6,
+        "unit": "kg",
+        "price": 2500
+      }
+    ]
+  },
+  {
+    "id": 1747547114339,
+    "invoiceNumber": "INV-069",
+    "customerName": "Ali Muhammad",
+    "customerPhone": "03016691052",
+    "salesman": "Bilal Mujahid",
+    "date": "5/18/2025",
+    "products": [
+      {
+        "product": "Elecronics",
+        "quantity": 6.6,
+        "unit": "kg",
+        "price": 1900
+      }
+    ]
+  },
+  {
+    "id": 1747547613553,
+    "invoiceNumber": "INV-070",
+    "customerName": "Murtaza",
+    "customerPhone": "03",
+    "salesman": "Bilal Mujahid",
+    "date": "5/18/2025",
+    "products": [
+      {
+        "product": "Hard disk",
+        "quantity": 1,
+        "unit": "pieces",
+        "price": 3000
+      }
+    ]
+  },
+  {
+    "id": 1747549256222,
+    "invoiceNumber": "INV-071",
+    "customerName": "Khurram",
+    "customerPhone": "03007531118",
+    "salesman": "Bilal Mujahid",
+    "date": "5/18/2025",
+    "products": [
+      {
+        "product": "Computer Accessories",
+        "quantity": 1.4,
+        "unit": "kg",
+        "price": 4285
+      }
+    ]
+  },
+  {
+    "id": 1747549933891,
+    "invoiceNumber": "INV-072",
+    "customerName": "Waqar",
+    "customerPhone": "03076244958",
+    "salesman": "Bilal Mujahid",
+    "date": "5/18/2025",
+    "products": [
+      {
+        "product": "Breaker",
+        "quantity": 0.6,
+        "unit": "kg",
+        "price": 3000
+      }
+    ]
+  },
+  {
+    "id": 1747553812884,
+    "invoiceNumber": "INV-073",
+    "customerName": "Nadeem Bhai",
+    "customerPhone": "03456525833",
+    "salesman": "Bilal Mujahid",
+    "date": "5/18/2025",
+    "products": [
+      {
+        "product": "Power Supply",
+        "quantity": 0.5,
+        "unit": "kg",
+        "price": 1000
+      }
+    ]
+  },
+  {
+    "id": 1747554373019,
+    "invoiceNumber": "INV-074",
+    "customerName": "Nadeem Bhai",
+    "customerPhone": "03456525833",
+    "salesman": "Bilal Mujahid",
+    "date": "5/18/2025",
+    "products": [
+      {
+        "product": "Power Supply",
+        "quantity": 2.9,
+        "unit": "kg",
+        "price": 850
+      }
+    ]
+  },
+  {
+    "id": 1747554541921,
+    "invoiceNumber": "INV-075",
+    "customerName": "Amjad",
+    "customerPhone": "03009198887",
+    "salesman": "Nasir Sb",
+    "date": "5/18/2025",
+    "products": [
+      {
+        "product": "Elecronics",
+        "quantity": 3,
+        "unit": "kg",
+        "price": 1500
+      }
+    ]
+  },
+  {
+    "id": 1747574488053,
+    "invoiceNumber": "INV-076",
+    "customerName": "Ali Mehmood",
+    "customerPhone": "03214743414",
+    "salesman": "Bilal Mujahid",
+    "date": "5/18/2025",
+    "products": [
+      {
+        "product": "Motor",
+        "quantity": 2.7,
+        "unit": "kg",
+        "price": 740
+      }
+    ]
+  },
+  {
+    "id": 1747633537131,
+    "invoiceNumber": "INV-077",
+    "customerName": "Hameed",
+    "customerPhone": "Lahor Bilal Ganj",
+    "salesman": "Bilal Mujahid",
+    "date": "5/19/2025",
+    "products": [
+      {
+        "product": "blower",
+        "quantity": 8.4,
+        "unit": "kg",
+        "price": 750
+      }
+    ]
+  },
+  {
+    "id": 1747637778053,
+    "invoiceNumber": "INV-078",
+    "customerName": "Hameed",
+    "customerPhone": "bilal ganj Lahore",
+    "salesman": "Bilal Mujahid",
+    "date": "5/19/2025",
+    "products": [
+      {
+        "product": "blower",
+        "quantity": 12.8,
+        "unit": "kg",
+        "price": 600
+      }
+    ]
+  },
+  {
+    "id": 1747641851914,
+    "invoiceNumber": "INV-079",
+    "customerName": "Rana Shahzad",
+    "customerPhone": "03007454812",
+    "salesman": "Bilal Mujahid",
+    "date": "5/19/2025",
+    "products": [
+      {
+        "product": "Light",
+        "quantity": 2.3,
+        "unit": "kg",
+        "price": 900
+      }
+    ]
+  },
+  {
+    "id": 1747641957727,
+    "invoiceNumber": "INV-080",
+    "customerName": "Iqbal sb",
+    "customerPhone": "03006570079",
+    "salesman": "Bilal Mujahid",
+    "date": "5/19/2025",
+    "products": [
+      {
+        "product": "Extension",
+        "quantity": 3.6,
+        "unit": "kg",
+        "price": 1500
+      }
+    ]
+  },
+  {
+    "id": 1747642485553,
+    "invoiceNumber": "INV-081",
+    "customerName": "Nasir",
+    "customerPhone": "03026540626",
+    "salesman": "Bilal Mujahid",
+    "date": "5/19/2025",
+    "products": [
+      {
+        "product": "Bike Shocks",
+        "quantity": 3,
+        "unit": "kg",
+        "price": 1333
+      }
+    ]
+  },
+  {
+    "id": 1747642588751,
+    "invoiceNumber": "INV-082",
+    "customerName": "Muhammad Hussai",
+    "customerPhone": "03026540626",
+    "salesman": "Bilal Mujahid",
+    "date": "5/19/2025",
+    "products": [
+      {
+        "product": "drill",
+        "quantity": 4.2,
+        "unit": "kg",
+        "price": 1200
+      }
+    ]
+  },
+  {
+    "id": 1747656985232,
+    "invoiceNumber": "INV-083",
+    "customerName": "Kashif ",
+    "customerPhone": "03236528959",
+    "salesman": "Nasir Sb",
+    "date": "5/19/2025",
+    "products": [
+      {
+        "product": "Silver Enameled Wire",
+        "quantity": 220,
+        "unit": "kg",
+        "price": 570
+      }
+    ]
+  },
+  {
+    "id": 1747657555520,
+    "invoiceNumber": "INV-084",
+    "customerName": "Muhammad Yahiya Lahore",
+    "customerPhone": "03004626248",
+    "salesman": "Bilal Mujahid",
+    "date": "5/19/2025",
+    "products": [
+      {
+        "product": "Silver Heat Sink",
+        "quantity": 18.1,
+        "unit": "kg",
+        "price": 850
+      },
+      {
+        "product": "Copper",
+        "quantity": 3.2,
+        "unit": "kg",
+        "price": 2400
+      },
+      {
+        "product": "Scooty Plastice body",
+        "quantity": 4,
+        "unit": "kg",
+        "price": 1000
+      },
+      {
+        "product": "drill",
+        "quantity": 1.8,
+        "unit": "kg",
+        "price": 1220
+      }
+    ]
+  },
+  {
+    "id": 1747810872236,
+    "invoiceNumber": "INV-085",
+    "customerName": "SaifUllah Missri Shah",
+    "customerPhone": "03424001118",
+    "salesman": "Bilal Mujahid",
+    "date": "5/21/2025",
+    "products": [
+      {
+        "product": "Generator",
+        "quantity": 127.2,
+        "unit": "kg",
+        "price": 740
+      }
+    ]
+  },
+  {
+    "id": 1747819265479,
+    "invoiceNumber": "INV-086",
+    "customerName": "Adil Lahore",
+    "customerPhone": "03213140257",
+    "salesman": "Bilal Mujahid",
+    "date": "5/21/2025",
+    "products": [
+      {
+        "product": "Cycle Parts",
+        "quantity": 2.8,
+        "unit": "kg",
+        "price": 1400
+      }
+    ]
+  },
+  {
+    "id": 1747839418424,
+    "invoiceNumber": "INV-087",
+    "customerName": "tasawar",
+    "customerPhone": "03008315404",
+    "salesman": "Asghar Ghori",
+    "date": "5/21/2025",
+    "products": [
+      {
+        "product": "Compressor",
+        "quantity": 5595,
+        "unit": "kg",
+        "price": 362
+      }
+    ]
+  },
+  {
+    "id": 1747919862397,
+    "invoiceNumber": "INV-088",
+    "customerName": "Khrram Bhai",
+    "customerPhone": "03007531118",
+    "salesman": "Bilal Mujahid",
+    "date": "5/22/2025",
+    "products": [
+      {
+        "product": "Hard disk",
+        "quantity": 8,
+        "unit": "pieces",
+        "price": 1200
+      },
+      {
+        "product": "processor",
+        "quantity": 1,
+        "unit": "pieces",
+        "price": 400
+      }
+    ]
+  },
+  {
+    "id": 1747919918865,
+    "invoiceNumber": "INV-089",
+    "customerName": "Jamshaid sb",
+    "customerPhone": "03079634692",
+    "salesman": "Bilal Mujahid",
+    "date": "5/22/2025",
+    "products": [
+      {
+        "product": "Hard disk",
+        "quantity": 1,
+        "unit": "pieces",
+        "price": 1400
+      }
+    ]
+  },
+  {
+    "id": 1748067622116,
+    "invoiceNumber": "INV-090",
+    "customerName": "Shahraz ahmed ",
+    "customerPhone": "03059430410",
+    "salesman": "Nasir Sb",
+    "date": "5/24/2025",
+    "products": [
+      {
+        "product": "Scooty",
+        "quantity": 2.7,
+        "unit": "kg",
+        "price": 1100
+      }
+    ]
+  },
+  {
+    "id": 1748076044669,
+    "invoiceNumber": "INV-091",
+    "customerName": "Zain-ul- Abidin",
+    "customerPhone": "03206250016",
+    "salesman": "Bilal Mujahid",
+    "date": "5/24/2025",
+    "products": [
+      {
+        "product": "drill",
+        "quantity": 1.6,
+        "unit": "kg",
+        "price": 1400
+      }
+    ]
+  },
+  {
+    "id": 1748082386431,
+    "invoiceNumber": "INV-092",
+    "customerName": "Imran sb",
+    "customerPhone": "03237715946",
+    "salesman": "Nasir Sb",
+    "date": "5/24/2025",
+    "products": [
+      {
+        "product": "Shawer Pipe ",
+        "quantity": 343.8,
+        "unit": "kg",
+        "price": 550
+      }
+    ]
+  },
+  {
+    "id": 1748505883733,
+    "invoiceNumber": "INV-093",
+    "customerName": "danish sb",
+    "customerPhone": "03205343882",
+    "salesman": "Nasir Sb",
+    "date": "5/25/2025",
+    "products": [
+      {
+        "product": "Computer Fan",
+        "quantity": 40,
+        "unit": "pieces",
+        "price": 100
+      }
+    ]
+  },
+  {
+    "id": 1748506002470,
+    "invoiceNumber": "INV-094",
+    "customerName": "Aqeel Ahmed",
+    "customerPhone": "0",
+    "salesman": "Bilal Mujahid",
+    "date": "5/25/2025",
+    "products": [
+      {
+        "product": "Sylinder",
+        "quantity": 10,
+        "unit": "kg",
+        "price": 850
+      }
+    ]
+  },
+  {
+    "id": 1748506347207,
+    "invoiceNumber": "INV-095",
+    "customerName": "M.Rizwan",
+    "customerPhone": "03225580962",
+    "salesman": "Bilal Mujahid",
+    "date": "5/27/2025",
+    "products": [
+      {
+        "product": "silver",
+        "quantity": 74.4,
+        "unit": "kg",
+        "price": 642
+      }
+    ]
+  },
+  {
+    "id": 1748506434474,
+    "invoiceNumber": "INV-096",
+    "customerName": "danish sb",
+    "customerPhone": "03205343882",
+    "salesman": "Bilal Mujahid",
+    "date": "5/27/2025",
+    "products": [
+      {
+        "product": "Computer Fan",
+        "quantity": 15,
+        "unit": "pieces",
+        "price": 100
+      }
+    ]
+  },
+  {
+    "id": 1748506477091,
+    "invoiceNumber": "INV-097",
+    "customerName": "M. Ashraf",
+    "customerPhone": "0",
+    "salesman": "Bilal Mujahid",
+    "date": "5/27/2025",
+    "products": [
+      {
+        "product": "Dvr",
+        "quantity": 1,
+        "unit": "pieces",
+        "price": 2000
+      }
+    ]
+  },
+  {
+    "id": 1748506549978,
+    "invoiceNumber": "INV-098",
+    "customerName": "ali Butt",
+    "customerPhone": "03033336230",
+    "salesman": "Bilal Mujahid",
+    "date": "5/28/2025",
+    "products": [
+      {
+        "product": "Compressor",
+        "quantity": 4370,
+        "unit": "kg",
+        "price": 370
+      }
+    ]
+  },
+  {
+    "id": 1748506827688,
+    "invoiceNumber": "INV-099",
+    "customerName": "Amanat Ali",
+    "customerPhone": "03067911208",
+    "salesman": "Imran Sb",
+    "date": "5/28/2025",
+    "products": [
+      {
+        "product": "Power Supply",
+        "quantity": 275,
+        "unit": "kg",
+        "price": 1200
+      }
+    ]
+  },
+  {
+    "id": 1748506943242,
+    "invoiceNumber": "INV-100",
+    "customerName": "Liaqat sb",
+    "customerPhone": "0300691146",
+    "salesman": "Nasir Sb",
+    "date": "5/28/2025",
+    "products": [
+      {
+        "product": "Iron Scrap",
+        "quantity": 3620,
+        "unit": "kg",
+        "price": 142
+      }
+    ]
+  },
+  {
+    "id": 1748507040238,
+    "invoiceNumber": "INV-101",
+    "customerName": "Jamshaid",
+    "customerPhone": "0",
+    "salesman": "Nasir Sb",
+    "date": "5/28/2025",
+    "products": [
+      {
+        "product": "Shawer Pipe ",
+        "quantity": 1.1,
+        "unit": "kg",
+        "price": 1800
+      }
+    ]
+  },
+  {
+    "id": 1748515126688,
+    "invoiceNumber": "INV-102",
+    "customerName": "Murtaza",
+    "customerPhone": "03026415826",
+    "salesman": "Nasir Sb",
+    "date": "5/29/2025",
+    "products": [
+      {
+        "product": "Hard disk",
+        "quantity": 2,
+        "unit": "pieces",
+        "price": 1200
+      },
+      {
+        "product": "processor",
+        "quantity": 2,
+        "unit": "pieces",
+        "price": 500
+      }
+    ]
+  },
+  {
+    "id": 1748515192534,
+    "invoiceNumber": "INV-103",
+    "customerName": "Rehmat Ullah",
+    "customerPhone": "03073975776",
+    "salesman": "Nasir Sb",
+    "date": "5/29/2025",
+    "products": [
+      {
+        "product": "Plastic Blower",
+        "quantity": 2.2,
+        "unit": "kg",
+        "price": 750
+      }
+    ]
+  },
+  {
+    "id": 1748691907577,
+    "invoiceNumber": "INV-104",
+    "customerName": "Rashid",
+    "customerPhone": "03446565440",
+    "salesman": "Nasir Sb",
+    "date": "5/31/2025",
+    "products": [
+      {
+        "product": "motor and Chimti",
+        "quantity": 1.8,
+        "unit": "kg",
+        "price": 1610
+      }
+    ]
+  },
+  {
+    "id": 1748768514304,
+    "invoiceNumber": "INV-105",
+    "customerName": "Zain-ul- Abidin",
+    "customerPhone": "03206250016",
+    "salesman": "Nasir Sb",
+    "date": "6/1/2025",
+    "products": [
+      {
+        "product": "Power Supply",
+        "quantity": 4.8,
+        "unit": "kg",
+        "price": 1310
+      }
+    ]
+  },
+  {
+    "id": 1748774264727,
+    "invoiceNumber": "INV-106",
+    "customerName": "Rana waqas",
+    "customerPhone": "03054591509",
+    "salesman": "Nasir Sb",
+    "date": "6/1/2025",
+    "products": [
+      {
+        "product": "Copper wire",
+        "quantity": 1.5,
+        "unit": "kg",
+        "price": 2150
+      }
+    ]
+  },
+  {
+    "id": 1748786831298,
+    "invoiceNumber": "INV-107",
+    "customerName": "zeshan ismail",
+    "customerPhone": "030650967911111",
+    "salesman": "na",
+    "date": "6/1/2025",
+    "products": [
+      {
+        "product": "123",
+        "quantity": 145,
+        "unit": "kg",
+        "price": 1234
+      }
+    ]
+  },
+  {
+    "id": 1748789742301,
+    "invoiceNumber": "INV-108",
+    "customerName": "zeshan",
+    "customerPhone": "123",
+    "salesman": "456",
+    "date": "6/1/2025",
+    "products": [
+      {
+        "product": "456",
+        "quantity": 45,
+        "unit": "kg",
+        "price": 4555
+      }
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1747920260270,
+    "weight": 23945,
+    "pricePerKg": 0,
+    "date": "2025-05-07"
+  },
+  {
+    "id": 1747920295731,
+    "weight": 23710,
+    "pricePerKg": 0,
+    "date": "2025-05-15"
+  },
+  {
+    "id": 1747920334643,
+    "weight": 25450,
+    "pricePerKg": 0,
+    "date": "2025-05-17"
+  },
+  {
+    "date": "2025-05-30",
+    "weight": 15,
+    "pricePerKg": 150,
+    "cashPaid": 2250,
+    "bossPaid": 0
+  }
+]

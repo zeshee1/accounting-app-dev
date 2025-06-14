@@ -1,0 +1,12 @@
+<%- include("../partials/header") %>
+<div class="container">
+  <h2 class="text-center my-3">Generate Salary</h2>
+  <form action="/salary/generate-salary" method="POST" class="card p-3">
+    <div class="mb-3">
+      <label>Month (MM)</label>
+      <input type="text" name="month" placeholder="05" class="form-control" required />
+    </div>
+    <button class="btn btn-success rounded-pill px-4">Generate</button>
+  </form>
+</div>
+<%- include("../partials/footer") %>

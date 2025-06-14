@@ -1,0 +1,330 @@
+<!-- START OF FILE -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Invoice | Saddiqi Brothers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    color: #495057;
+    transition: background-color 0.3s ease;
+
+    /* ✅ New background image settings */
+    background-image: url('/img/bg.jpg'); /* Ensure this image exists */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #e9ecef; /* fallback color */
+}
+        .content {
+            flex-grow: 1;
+            padding: 30px;
+            transform: perspective(500px) translateZ(0px);
+            transition: transform 0.3s ease;
+        }
+        .content:hover {
+            transform: perspective(500px) translateZ(3px);
+        }
+        h1 {
+            text-align: center;
+            color: #283593;
+            margin-bottom: 30px;
+        }
+        form {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        label {
+            font-weight: 600;
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+            margin-bottom: 10px;
+            display: inline-block;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Added transition */
+        }
+        input:hover, select:hover {
+            border-color: #007bff; /* Highlight on hover */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle shadow on hover */
+        }
+        input:focus, select:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+            outline: none; /* Remove default focus outline */
+        }
+        .submit-btn {
+            background-color: #3949ab;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            margin-top: 25px;
+            width: 100%;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Added transition */
+        }
+        .submit-btn:hover {
+            background-color: #303f9f;
+            transform: translateY(-2px); /* Slight lift on hover */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Added shadow on hover */
+        }
+        .product-row {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 10px;
+            background-color: #f5f5f5;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            transition: box-shadow 0.2s ease, background-color 0.2s ease; /* Added background-color transition */
+        }
+        .product-row:hover {
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow on hover */
+            background-color: #ebebeb; /* Slightly darker background on hover */
+        }
+        .remove-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            grid-column: -1; /* Place at the end of the row */
+            justify-self: start;
+            width: fit-content;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Added transition */
+        }
+        .remove-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-1px); /* Slight lift on hover */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Added shadow on hover */
+        }
+        .add-btn {
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            margin-top: 20px;
+            cursor: pointer;
+            width: fit-content;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Added transition */
+        }
+        .add-btn:hover {
+            background-color: #27ae60;
+            transform: translateY(-1px); /* Slight lift on hover */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Added shadow on hover */
+        }
+        .custom-product-input {
+            display: none;
+        }
+        .custom-product-label {
+            display: none;
+        }
+        .sidebar {
+            width: 220px;
+            background-color: #343a40;
+            color: white;
+            padding-top: 20px;
+            position: sticky;
+            top: 0;
+            height: 100vh; /* Or adjust as needed */
+            overflow-y: auto;
+            z-index: 100; /* Ensure it's above other content */
+        }
+        .sidebar-title {
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #f8f9fa;
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Added transition */
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+            transform: translateX(2px); /* Slight slide on hover */
+        }
+        .sidebar a i {
+            margin-right: 8px;
+        }
+        .button {
+            display: inline-block;
+            padding: 8px 12px;
+            margin: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Added transition */
+        }
+        .button:hover {
+            background-color: #0056b3;
+            transform: translateY(-1px); /* Slight lift on hover */
+            box-shadow: 0 2px 4px rgba(2, 165, 24, 0.2); /* Added shadow on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h3 class="sidebar-title"><i class="fas fa-tachometer-alt mr-2"></i> Menu</h3>
+        <a href="/"><i class="fas fa-home"></i> Home</a>
+        <a href="/sales"><i class="fas fa-shopping-cart"></i> Sales</a>
+        <a href="/purchase/all"><i class="fas fa-truck"></i> Purchase Summary</a>
+        <a href="/purchase"><i class="fas fa-truck"></i> Add Purchase</a>
+        <a href="/invoice" class="active"><i class="fas fa-file-invoice"></i> Create Invoice</a>
+        <a href="/invoice/all"><i class="fas fa-list-alt"></i> View All Invoices</a>
+        <a href="/expense"><i class="fas fa-coins"></i> Add Expense</a>
+        <a href="/expense/all"><i class="fas fa-list-ul"></i> View Expenses</a>
+        <a href="/summary-form"><i class="fas fa-calendar-day"></i> Daily Summary</a>
+        <a href="/customers"><i class="fas fa-users"></i> Customer Details</a>
+    </div>
+
+
+    <div class="content">
+        <h1>Create New Invoice</h1>
+
+        <form action="/invoice/create" method="POST" id="invoiceForm">
+            <label>Customer Name:</label>
+            <input type="text" name="customerName" required>
+            <label>Customer Phone:</label>
+            <input type="text" name="customerPhone" required>
+            <label>Salesman Name:</label>
+            <input type="text" name="salesman" required>
+
+            <div id="products-section">
+                <div class="product-row" data-index="0">
+                    <label>Product:</label>
+                    <select name="product[]" class="product-select" required>
+                        <option value="">-- Select Product --</option>
+                        <option value="Television">Television</option>
+                        <option value="Refrigerator">Refrigerator</option>
+                        <option value="Washing Machine">Washing Machine</option>
+                        <option value="Air Conditioner">Air Conditioner</option>
+                        <option value="Microwave Oven">Microwave Oven</option>
+                        <option value="Iron">Iron</option>
+                        <option value="Mobile Phone">Mobile Phone</option>
+                        <option value="CPU">CPU</option>
+                        <option value="RAM">RAM</option>
+                        <option value="Hard Disk">Hard Disk</option>
+                        <option value="Copper Wire Scrap">Copper Wire Scrap</option>
+                        <option value="Iron Scrap">Iron Scrap</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <label class="custom-product-label">Other Product:</label>
+                    <input type="text" class="custom-product-input" name="customProduct[]" placeholder="Enter product name">
+
+                    <label>Quantity:</label>
+                    <input type="number" name="quantity[]" step="0.01" required>
+
+                    <label>Unit:</label>
+                    <select name="unit[]" required>
+                        <option value="kg">Kg</option>
+                        <option value="pieces">Pieces</option>
+                        <option value="unit">Unit</option>
+                    </select>
+
+                    <label>Price per Unit:</label>
+                    <input type="number" name="price[]" step="0.01" required>
+
+                    <button type="button" class="remove-btn" onclick="removeProduct(this)" style="display:none;">Remove</button>
+                </div>
+            </div>
+
+            <button type="button" class="add-btn" onclick="addProduct()">+ Add Another Product</button>
+            <button class="submit-btn" type="submit">Generate Invoice</button>
+        </form>
+    </div>
+
+    <script>
+        let productIndex = 1;
+
+        function addProduct() {
+            const container = document.getElementById('products-section');
+            const firstRow = container.querySelector('.product-row');
+            const newRow = firstRow.cloneNode(true);
+
+            newRow.setAttribute('data-index', productIndex);
+
+            // Reset input values
+            newRow.querySelectorAll('input, select').forEach(input => {
+                input.value = '';
+            });
+
+            // Show remove button
+            newRow.querySelector('.remove-btn').style.display = 'inline-block';
+
+            // Hide other input by default
+            newRow.querySelector('.custom-product-label').style.display = 'none';
+            newRow.querySelector('.custom-product-input').style.display = 'none';
+
+            // Set event listener for dropdown
+            const productSelect = newRow.querySelector('.product-select');
+            productSelect.addEventListener('change', function () {
+                toggleCustomProduct(productSelect);
+            });
+
+            container.appendChild(newRow);
+            productIndex++;
+        }
+
+        function removeProduct(button) {
+            const row = button.parentNode;
+            row.remove();
+        }
+
+        function toggleCustomProduct(selectElement) {
+            const row = selectElement.closest('.product-row');
+            const customLabel = row.querySelector('.custom-product-label');
+            const customInput = row.querySelector('.custom-product-input');
+
+            if (selectElement.value === 'Other') {
+                customLabel.style.display = 'inline-block';
+                customInput.style.display = 'inline-block';
+                customInput.required = true;
+            } else {
+                customLabel.style.display = 'none';
+                customInput.style.display = 'none';
+                customInput.value = '';
+                customInput.required = false;
+            }
+        }
+
+        // Attach to initial product select
+        document.querySelector('.product-select').addEventListener('change', function () {
+            toggleCustomProduct(this);
+        });
+    </script>
+</body>
+</html>
+<!-- END OF FILE -->

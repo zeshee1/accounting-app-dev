@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Salary Management | Saddiqi Brothers</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding: 30px;
+      background: #f2f2f2;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .table thead {
+      background-color: #343a40;
+      color: white;
+    }
+    .form-section {
+      background: white;
+      padding: 25px;
+      margin-bottom: 40px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .form-section h4 {
+      margin-bottom: 20px;
+      color: #343a40;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Salary Management</h1>
+
+  <div class="form-section">
+    <h4>Add New Employee</h4>
+    <form action="/salary/employee/add" method="POST">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <input type="text" class="form-control" name="name" placeholder="Employee Name" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <input type="text" class="form-control" name="phone" placeholder="Phone Number" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <input type="number" class="form-control" name="salary" placeholder="Monthly Salary" required>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success">Add Employee</button>
+    </form>
+  </div>
+
+  <div class="form-section">
+    <h4>Record Salary/Advance</h4>
+    <form action="/salary/transaction/add" method="POST">
+      <div class="row">
+        <div class="col-md-3 mb-3">
+          <select name="employeeId" class="form-control" required>
+            <option value="">Select Employee</option>
+            <% employees.forEach(emp => { %>
+              <option value="<%= emp.id %>"><%= emp.name %></option>
+            <% }) %>
+          </select>
+        </div>
+        <div class="col-md-3 mb-3">
+          <input type="number" class="form-control" name="amount" placeholder="Amount" required>
+        </div>
+        <div class="col-md-3 mb-3">
+          <select name="type" class="form-control" required>
+            <option value="salary">Salary</option>
+            <option value="advance">Advance</option>
+          </select>
+        </div>
+        <div class="col-md-3 mb-3">
+          <input type="date" class="form-control" name="date" required>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Save Transaction</button>
+    </form>
+  </div>
+
+  <div class="form-section">
+    <h4>Employee Salary Summary</h4>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Monthly Salary</th>
+          <th>Total Advance</th>
+          <th>Remaining Salary</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% employees.forEach(emp => { %>
+            <tr>
+              <td><%= emp.name %></td>
+              <td><%= emp.phone %></td>
+              <td>Rs. <%= typeof emp.salary === 'number' ? emp.salary.toFixed(2) : '0.00' %></td>
+              <td>Rs. <%= typeof emp.advance === 'number' ? emp.advance.toFixed(2) : '0.00' %></td>
+              <td>Rs. <%= typeof emp.remaining === 'number' ? emp.remaining.toFixed(2) : '0.00' %></td>
+              <td><a class="btn btn-sm btn-primary" href="/salary/<%= emp.id %>">View</a></td>
+            </tr>
+          <% }) %>
+          
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

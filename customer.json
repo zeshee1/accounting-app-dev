@@ -1,0 +1,24 @@
+[
+    {
+    "code": "1000001",
+    "name": "william",
+    "phone": "+923065096791",
+    "idCardNumber": "3120263575425",
+    "passportNumber": "",
+    "idCardExpiry": "2025-11-30",
+    "passportExpiry": "",
+    "nationality": "pakistani",
+    "province": "punjab",
+    "city": "Multan",
+    "streetAddress": "Mujtaba Canal",
+    "contactNumber2": "03065096791",
+    "emailAddress": "zeeshi4s@hotmail.com",
+    "vehicleType": "Car",
+    "vehicleModel": "2025",
+    "vehiclePlateNumber": "1254",
+    "vehicleColour": "red",
+    "idDocumentPicture": "1748778479480-hero.png",
+    "customerPicture": "1748778479490-Untitled-1.png"
+  }
+  
+]

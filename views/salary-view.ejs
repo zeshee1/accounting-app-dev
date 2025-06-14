@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Salary Detail</title>
+</head>
+<body>
+  <h1>Salary Details for <%= worker.name %></h1>
+  <p><strong>Designation:</strong> <%= worker.designation %></p>
+  <p><strong>Phone:</strong> <%= worker.phone %></p>
+  <p><strong>Monthly Salary:</strong> Rs. <%= worker.monthlySalary %></p>
+  <p><strong>Salary Date:</strong> <%= salaryDate %></p>
+  <hr>
+  <h3>Salary Transactions</h3>
+  <table border="1">
+    <tr><th>Date</th><th>Description</th><th>Amount</th><th>Type</th></tr>
+    <% salaryRecords.forEach(rec => { %>
+      <tr>
+        <td><%= rec.date %></td>
+        <td><%= rec.description %></td>
+        <td>Rs. <%= rec.amount %></td>
+        <td><%= rec.type %></td>
+      </tr>
+    <% }) %>
+  </table>
+  <h3>Final Amount: Rs. <%= finalAmount %> — <%= finalAmount < 0 ? 'Credit' : 'Debit' %></h3>
+  <a href="/salary">← Back</a>
+</body>
+</html>

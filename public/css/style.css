@@ -1,0 +1,204 @@
+/* public/css/style.css */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    color: #495057;
+    transition: background-color 0.3s ease;
+
+    background-image: url('/img/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #e9ecef;
+    animation: backgroundFade 20s infinite alternate;
+}
+
+@keyframes backgroundFade {
+    0% { filter: brightness(1); }
+    100% { filter: brightness(1.1); }
+}
+
+body:hover {
+    background-color: #f0f3f8;
+}
+
+.sidebar {
+    width: 240px;
+    background-color: #343a40;
+    color: white;
+    padding-top: 30px;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 100vh;
+    transform: perspective(500px) translateZ(0px);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.sidebar:hover {
+    transform: perspective(500px) translateZ(5px);
+    background-color: #28a745;
+}
+
+.sidebar-title {
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+    text-align: left;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 1.05rem;
+}
+
+.sidebar a i {
+    margin-right: 15px;
+    width: 25px;
+    text-align: center;
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.sidebar a:hover i {
+    transform: scale(1.2);
+}
+
+.sidebar a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: bold;
+    transform: translateX(0);
+}
+
+.content {
+    flex-grow: 1;
+    padding: 30px;
+    transform: perspective(500px) translateZ(0px);
+    transition: transform 0.3s ease;
+}
+
+.content:hover {
+    transform: perspective(500px) translateZ(3px);
+}
+
+.header-actions {
+    margin-bottom: 30px;
+    animation: slideInDown 0.6s ease;
+}
+
+@keyframes slideInDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.header-actions button {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-size: 1.05rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.header-actions button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    color: white;
+    margin-bottom: 25px;
+    transform: perspective(500px) translateZ(0px);
+    transition: transform 0.3s ease;
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dashboard-card:hover {
+    transform: perspective(500px) translateZ(5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-card.bg-primary {
+    background-color: #6610f2 !important;
+}
+
+.dashboard-card.bg-info {
+    background-color: #17a2b8 !important;
+}
+
+.dashboard-card.bg-danger {
+    background-color: #dc3545 !important;
+}
+
+.dashboard-card.bg-success {
+    background-color: #28a745 !important;
+}
+
+.dashboard-card.bg-warning {
+    background-color: #ffc107 !important;
+    color: #212529 !important;
+}
+
+.dashboard-card .card-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboard-card .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.dashboard-card .amount {
+    font-size: 2rem;
+    font-weight: bold;
+    animation: fadeIn 1s ease;
+}

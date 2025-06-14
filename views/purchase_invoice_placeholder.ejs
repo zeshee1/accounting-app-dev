@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Purchase Invoice <%= invoiceId %></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            margin: 0;
+            padding: 10px;
+            background: white;
+        }
+        .invoice-box {
+            width: 72mm;
+            max-width: 72mm;
+            margin: auto;
+            padding: 5px;
+            border: 1px dashed #000;
+        }
+        .center {
+            text-align: center;
+        }
+        .logo {
+            max-width: 50px;
+            margin-bottom: 5px;
+        }
+        .small {
+            font-size: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: none;
+        }
+        .item-table th, .item-table td {
+            border-top: 1px dashed #000;
+            border-bottom: 1px dashed #000;
+            padding: 2px;
+            font-size: 11px;
+        }
+        .footer {
+            margin-top: 10px;
+            font-size: 10px;
+        }
+        .signature {
+            margin-top: 10px;
+            border-top: 1px solid #000;
+            text-align: center;
+            padding-top: 10px;
+            font-size: 10px;
+        }
+        .image-container {
+            text-align: center;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .document-image {
+            max-width: 70mm; /* Adjusted for receipt width */
+            height: auto;
+            display: block; /* Ensures it takes full width */
+            margin: 0 auto; /* Center image */
+            padding: 2px;
+            border: 1px dashed #ddd;
+        }
+        .notes-section {
+            font-size: 10px;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+        @media print {
+            .print-btn {
+                display: none;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .invoice-box {
+                border: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="print-btn center">
+        <button onclick="window.print()">🖨️ Print Invoice</button>
+    </div>
+
+    <div class="invoice-box">
+        <div class="center">
+            <img src="/images/logo.png" alt="Logo" class="logo">
+            <div><strong>METAL DAY, S.A.</strong></div>
+            <div class="small">Carrer Cobalt, 62-68, 08907 Hospitalet de Llobregat</div>
+            <div class="small">Tel: 933380222 | CIF: A65930398</div>
+            <div class="small">Email: info@metalday.es | www.metalday.es</div>
+            <hr>
+        </div>
+
+        <div>
+            <strong>Invoice No:</strong> <%= invoiceId %><br>
+            <strong>Date:</strong> <%= invoiceData.date %><br>
+            <strong>Time:</strong> <%= invoiceData.time || new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false }) %><br>
+            <strong>Buyer:</strong> <%= invoiceData.buyerName || 'N/A' %><br>
+            <strong>Weigher:</strong> <%= invoiceData.weigherName || '-' %><br>
+        </div>
+
+        <hr>
+
+        <div>
+            <strong>Customer Code:</strong> <%= invoiceData.customerId %><br>
+            <strong>Name:</strong> <%= invoiceData.customerName %><br>
+            <strong>NIF/DNI Type:</strong> <%= invoiceData.nifDniType || '-' %><br>
+            <% if (invoiceData.idCardExpiry) { %>
+            <strong>ID Card Expiry:</strong> <%= invoiceData.idCardExpiry %><br>
+            <% } %>
+            <% if (invoiceData.passportExpiry) { %>
+            <strong>Passport Expiry:</strong> <%= invoiceData.passportExpiry %><br>
+            <% } %>
+            <strong>Nationality:</strong> <%= invoiceData.nationality || '-' %><br>
+            <strong>Address:</strong> <%= invoiceData.streetAddress %>, <%= invoiceData.city %>, <%= invoiceData.province || '-' %><br>
+            <strong>Phone:</strong> <%= invoiceData.customerPhone %><br>
+            <% if (invoiceData.contactNumber2) { %>
+            <strong>Contact No. 2:</strong> <%= invoiceData.contactNumber2 %><br>
+            <% } %>
+            <% if (invoiceData.emailAddress) { %>
+            <strong>Email:</strong> <%= invoiceData.emailAddress %><br>
+            <% } %>
+        </div>
+        <% if (invoiceData.customerPicture || invoiceData.idDocumentPicture) { %>
+        <div class="image-container">
+            <% if (invoiceData.customerPicture) { %>
+                <hr><div class="small center">Customer Photo</div>
+                <img src="/uploads/<%= invoiceData.customerPicture %>" alt="Customer Photo" class="document-image">
+            <% } %>
+            <% if (invoiceData.idDocumentPicture) { %>
+                <hr><div class="small center">ID Document Photo</div>
+                <img src="/uploads/<%= invoiceData.idDocumentPicture %>" alt="ID Document Photo" class="document-image">
+            <% } %>
+        </div>
+        <% } %>
+
+        <table class="item-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Code</th>
+                    <th>Weight</th>
+                    <th>P/Kg</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% invoiceData.items.forEach(function(item) { %>
+                    <tr>
+                        <td><%= item.description %></td>
+                        <td><%= item.itemCode || '-' %></td>
+                        <td><%= item.weight %> Kg</td>
+                        <td><%= item.price %> €</td>
+                        <td><%= item.total %> €</td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+
+        <div class="footer">
+            <div><strong>Base Amount:</strong> <%= invoiceData.totalAmount.toFixed(2) %> €</div>
+            <div><strong>IVA:</strong> 0.00 €</div>
+            <div><strong>TOTAL:</strong> <%= invoiceData.totalAmount.toFixed(2) %> €</div>
+            <div><strong>Payment:</strong> Cash</div>
+        </div>
+
+        <% if (invoiceData.comment || invoiceData.customerBehaviour || invoiceData.consentText) { %>
+        <hr>
+        <div class="notes-section">
+            <% if (invoiceData.comment) { %>
+            <div><strong>Comments:</strong> <%= invoiceData.comment %></div>
+            <% } %>
+            <% if (invoiceData.customerBehaviour) { %>
+            <div><strong>Customer Behavior:</strong> <%= invoiceData.customerBehaviour %></div>
+            <% } %>
+            <% if (invoiceData.consentText) { %>
+            <div><strong>Consent:</strong> <%= invoiceData.consentText %></div>
+            <% } %>
+        </div>
+        <% } %>
+
+        <% if (invoiceData.signatureFile) { %>
+        <div class="signature">
+            <img src="/signatures/<%= invoiceData.signatureFile %>" alt="Provider Signature" style="max-width:100px; height:auto;">
+            <div>Provider Signature</div>
+        </div>
+        <% } %>
+    </div>
+</body>
+</html>

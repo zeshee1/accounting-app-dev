@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Registration| Saddiqi Brothers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background-image: url('/img/bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        /* Sidebar styles from salary.ejs */
+        .sidebar {
+            background-color: #343a40;
+            color: white;
+            padding-top: 20px;
+            width: 250px;
+            min-width: 250px;
+            transition: width 0.3s ease;
+            position: fixed; /* Added for consistent sidebar positioning */
+            height: 100%; /* Added to make sidebar full height */
+            top: 0;
+            left: 0;
+            overflow-y: auto; /* For scrollable sidebar if content is long */
+        }
+        .sidebar-title {
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .sidebar a {
+            padding: 12px 20px;
+            display: block;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+        .sidebar a i {
+            margin-right: 10px;
+        }
+        /* Main content area adjustment */
+        .content-wrapper {
+            margin-left: 250px; /* Space for the fixed sidebar */
+            padding: 30px;
+            flex-grow: 1;
+        }
+        .card {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+        .card-header {
+            background-color: #0d6efd; /* Primary blue for headers */
+            color: white;
+            font-weight: bold;
+        }
+        .table-responsive {
+            margin-top: 20px;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-control-lg, .form-select-lg {
+            height: 48px; /* Consistent height with salary.ejs */
+            font-size: 1.25rem; /* Consistent font size */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="d-flex">
+        <div class="sidebar">
+        <h3 class="sidebar-title"><i class="fas fa-tachometer-alt mr-2"></i> Menu</h3>
+        <a href="/" class="active"><i class="fas fa-home"></i> Home</a>
+        <a href="/report/product-wise-revenue" class="btn">📊 Product-wise Revenue</a>
+        <a href="/purchase/all"><i class="fas fa-truck"></i> Purchase Summary</a>
+        <a href="/purchase"><i class="fas fa-truck"></i> Add Purchase</a>
+        <a href="/invoice"><i class="fas fa-file-invoice"></i> Create Invoice</a>
+        <a href="/invoice/all"><i class="fas fa-list-alt"></i> View All Invoices</a>
+        <a href="/expense"><i class="fas fa-coins"></i> Add Expense</a>
+        <a href="/expense/all"><i class="fas fa-list-ul"></i> View Expenses</a>
+        <a href="/salary" class=""><i class="fas fa-user-tie"></i> Salary Management</a>
+        <a href="/summary-form"><i class="fas fa-calendar-day"></i> Daily Summary</a>
+        <a href="/customers"><i class="fas fa-users"></i> Customer Details</a>
+        <a href="/salary-report"><i class="fas fa-chart-line"></i> Salary Report</a>
+    </div>
+
+
+        <div class="content-wrapper">
+            <div class="container py-4">
+                <h1 class="text-center text-primary mb-4">👤 Customer Registration</h1>
+
+                <div class="card shadow mb-4 border-0">
+                    <div class="card-header bg-primary text-white fw-bold">➕ Add New Customer</div>
+                    <div class="card-body">
+                        <form id="addCustomerForm" action="/customers/add" method="POST" enctype="multipart/form-data">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label for="customerCode" class="form-label">Code</label>
+                                    <input type="text" name="code" id="customerCode" class="form-control form-control-lg" placeholder="Assign Code" required />
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="customerName" class="form-label">Name</label>
+                                    <input type="text" name="name" id="customerName" class="form-control form-control-lg" placeholder="Customer Name" required />
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="customerPhone" class="form-label">Phone Number</label>
+                                    <input type="text" name="phone" id="customerPhone" class="form-control form-control-lg" placeholder="Phone Number" required />
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="idCardNumber" class="form-label">ID Card Number</label>
+                                    <input type="text" name="idCardNumber" id="idCardNumber" class="form-control form-control-lg" placeholder="ID Card Number" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="passportNumber" class="form-label">Passport Number</label>
+                                    <input type="text" name="passportNumber" id="passportNumber" class="form-control form-control-lg" placeholder="Passport Number" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="idCardExpiry" class="form-label">ID Card Expiry Date</label>
+                                    <input type="date" name="idCardExpiry" id="idCardExpiry" class="form-control form-control-lg" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="passportExpiry" class="form-label">Passport Expiry Date</label>
+                                    <input type="date" name="passportExpiry" id="passportExpiry" class="form-control form-control-lg" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="nationality" class="form-label">Nationality</label>
+                                    <input type="text" name="nationality" id="nationality" class="form-control form-control-lg" placeholder="Nationality" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="province" class="form-label">Province</label>
+                                    <input type="text" name="province" id="province" class="form-control form-control-lg" placeholder="Province" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="city" class="form-label">City</label>
+                                    <input type="text" name="city" id="city" class="form-control form-control-lg" placeholder="City" />
+                                </div>
+                                <div class="col-md-8">
+                                    <label for="streetAddress" class="form-label">Street Address</label>
+                                    <input type="text" name="streetAddress" id="streetAddress" class="form-control form-control-lg" placeholder="Street Address" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="contactNumber2" class="form-label">Second Phone Number</label>
+                                    <input type="text" name="contactNumber2" id="contactNumber2" class="form-control form-control-lg" placeholder="Optional" />
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="emailAddress" class="form-label">Email Address </label>
+                                    <input type="email" name="emailAddress" id="emailAddress" class="form-control form-control-lg" placeholder="Optional" />
+                                </div>
+
+                                <div class="col-12 mt-4">
+                                    <div class="card shadow border-0">
+                                        <div class="card-header bg-info text-white fw-bold">Vehicle Information</div>
+                                        <div class="card-body">
+                                            <div class="row g-3">
+                                                <div class="col-md-4">
+                                                    <label for="vehicleType" class="form-label">vehicle Type</label>
+                                                    <select name="vehicleType" id="vehicleType" class="form-select form-select-lg" required>
+                                                        <option value="">Select</option>
+                                                        <option value="Bike">Bike</option>
+                                                        <option value="Car">Car</option>
+                                                        <option value="Freight Vehicle">Freight</option>
+                                                        <option value="On Foot">On Foot</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4 vehicle-details" style="display: none;">
+                                                    <label for="vehicleModel" class="form-label">vehicle Model</label>
+                                                    <input type="text" name="vehicleModel" id="vehicleModel" class="form-control form-control-lg" placeholder="Vehicle Model" />
+                                                </div>
+                                                <div class="col-md-4 vehicle-details" style="display: none;">
+                                                    <label for="vehiclePlateNumber" class="form-label">vehicle Plate Number</label>
+                                                    <input type="text" name="vehiclePlateNumber" id="vehiclePlateNumber" class="form-control form-control-lg" placeholder="Vehicle plate Number" />
+                                                </div>
+                                                <div class="col-md-4 vehicle-details" style="display: none;">
+                                                    <label for="vehicleColour" class="form-label">vehicle Colour</label>
+                                                    <input type="text" name="vehicleColour" id="vehicleColour" class="form-control form-control-lg" placeholder="vehicle Colour" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+<div class="col-md-6 mt-4">
+                                       <div class="card shadow border-0">
+                                           <div class="card-header bg-warning text-dark fw-bold">ID document Picture</div>
+                                           <div class="card-body">
+                                               <label for="idDocumentPicture" class="form-label">Choose image</label>
+                                               <input type="file" name="idDocumentPicture" id="idDocumentPicture" class="form-control" accept="image/*" />
+                                               <input type="hidden" name="idDocumentPictureBase64" id="idDocumentPictureBase64">
+                                               <button type="button" id="openIdCameraBtn" class="btn btn-info mt-2"><i class="fas fa-camera"></i> Open Camera</button>
+                                               <video id="idVideo" style="width: 100%; margin-top: 10px; display: none;" autoplay></video>
+                                               <button type="button" id="captureIdBtn" class="btn btn-warning mt-2" style="display: none;"><i class="fas fa-camera"></i> Capture</button>
+                                               <img id="idPreview" src="#" alt="Preview" style="width: 100px; margin-top: 10px; display: none;" />
+                                           </div>
+                                       </div>
+                                   </div>
+                                   
+                                   <div class="col-md-6 mt-4">
+                                       <div class="card shadow border-0">
+                                           <div class="card-header bg-warning text-dark fw-bold">Customer Picture</div>
+                                           <div class="card-body">
+                                               <label for="customerPicture" class="form-label">Choose Image</label>
+                                               <input type="file" name="customerPicture" id="customerPicture" class="form-control" accept="image/*" />
+                                               <input type="hidden" name="customerPictureBase64" id="customerPictureBase64">
+                                               <button type="button" id="openCustomerCameraBtn" class="btn btn-info mt-2"><i class="fas fa-camera"></i> Open Camera</button>
+                                               <video id="customerVideo" style="width: 100%; margin-top: 10px; display: none;" autoplay></video>
+                                               <button type="button" id="captureCustomerBtn" class="btn btn-warning mt-2" style="display: none;"><i class="fas fa-camera"></i> Capture</button>
+                                               <img id="customerPreview" src="#" alt="Preview" style="width: 100px; margin-top: 10px; display: none;" />
+                                           </div>
+                                       </div>
+                                   </div>
+
+                                <div class="col-12 mt-4 d-grid">
+                                    
+                                    <button type="submit" class="btn btn-success btn-lg">Add Customer</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card shadow border-0 mt-5">
+                    <div class="card-header bg-success text-white fw-bold">📋 List of Registered Customers</div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered align-middle">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Code</th>
+                                        <th>Name</th>
+                                        <th>Phone Number</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% if (customers && customers.length > 0) { %>
+                                        <% customers.forEach((customer, index) => { %>
+                                            <tr>
+                                                <td><%= index + 1 %></td>
+                                                <td><%= customer.code %></td>
+                                                <td><%= customer.name %></td>
+                                                <td><%= customer.phone %></td>
+                                                <td>
+                                                    <a href="/customers/customer-view/<%= customer.code %>" class="btn btn-info btn-sm">View</a>
+                                                    <button type="button" class="btn btn-warning btn-sm" onclick="editCustomer('<%= customer.code %>')">Edit</button>
+                                                    <button type="button" class="btn btn-danger btn-sm" onclick="deleteCustomer('<%= customer.code %>')">Delete</button>
+                                                </td>
+                                            </tr>
+                                        <% }); %>
+                                    <% } else { %>
+                                        <tr>
+                                            <td colspan="5" class="text-center">No Customer Added Yet</td>
+                                        </tr>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // JavaScript for conditional display of vehicle fields
+        document.addEventListener('DOMContentLoaded', function() {
+            const vehicleTypeSelect = document.getElementById('vehicleType');
+            const vehicleDetailsFields = document.querySelectorAll('.vehicle-details');
+            const idCardNumberField = document.getElementById('idCardNumber');
+            const passportNumberField = document.getElementById('passportNumber');
+            const addCustomerForm = document.getElementById('addCustomerForm');
+
+            function toggleVehicleDetails() {
+                if (vehicleTypeSelect.value === 'On Foot') {
+                    vehicleDetailsFields.forEach(field => field.style.display = 'none');
+                    // Clear values if hidden
+                    document.getElementById('vehicleModel').value = '';
+                    document.getElementById('vehiclePlateNumber').value = '';
+                    document.getElementById('vehicleColour').value = '';
+                } else {
+                    vehicleDetailsFields.forEach(field => field.style.display = 'block');
+                }
+            }
+
+            vehicleTypeSelect.addEventListener('change', toggleVehicleDetails);
+            toggleVehicleDetails(); // Initial call to set correct visibility on page load
+
+            // Validation for ID Card or Passport
+            addCustomerForm.addEventListener('submit', function(event) {
+                if (!idCardNumberField.value && !passportNumberField.value) {
+                    alert('One of the Document is Mandatory');
+                    event.preventDefault(); // Stop form submission
+                }
+            });
+
+            // Implement these functions for Edit and Delete (backend logic needed)
+            window.editCustomer = function(customerCode) {
+                // Redirect to an edit page or open a modal for editing
+                alert('ترمیم کا فیچر ابھی شامل نہیں کیا گیا ہے۔ کوڈ: ' + customerCode);
+                // Example: window.location.href = '/customer-edit/' + customerCode;
+            };
+
+            window.deleteCustomer = function(customerCode) {
+                if (confirm('کیا آپ واقعی اس گاہک کو حذف کرنا چاہتے ہیں؟')) {
+                    // Send a DELETE request to the server
+                    fetch(`/customers/delete/${customerCode}`, {
+                        method: 'DELETE'
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('گاہک کامیابی سے حذف کر دیا گیا ہے۔');
+                            window.location.reload(); // Reload the page to update the list
+                        } else {
+                            alert('گاہک کو حذف کرنے میں ناکامی: ' + data.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('گاہک کو حذف کرتے وقت کوئی خرابی پیش آئی۔');
+                    });
+                }
+            };
+        });
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Customer camera
+        const customerOpenBtn = document.getElementById('openCustomerCameraBtn');
+        const customerVideo = document.getElementById('customerVideo');
+        const customerCaptureBtn = document.getElementById('captureCustomerBtn');
+        const customerPreview = document.getElementById('customerPreview');
+        const customerBase64Input = document.getElementById('customerPictureBase64'); // Renamed for clarity
+        const customerFileInput = document.getElementById('customerPicture'); // Added reference to file input
+        let customerStream = null;
+
+        customerOpenBtn.addEventListener('click', async () => {
+            try {
+                customerStream = await navigator.mediaDevices.getUserMedia({ video: true });
+                customerVideo.srcObject = customerStream;
+                customerVideo.style.display = 'block';
+                customerCaptureBtn.style.display = 'inline-block';
+                customerPreview.style.display = 'none'; // Hide preview when opening camera
+                customerFileInput.value = ''; // Clear file input when camera is opened
+            } catch (err) {
+                console.error("Error accessing customer camera: ", err);
+                alert("Camera access denied or not available. Please allow camera access or choose a file.");
+            }
+        });
+
+        customerCaptureBtn.addEventListener('click', () => {
+            const canvas = document.createElement('canvas');
+            canvas.width = customerVideo.videoWidth;
+            canvas.height = customerVideo.videoHeight;
+            canvas.getContext('2d').drawImage(customerVideo, 0, 0);
+            const base64 = canvas.toDataURL('image/png');
+            customerBase64Input.value = base64; // Still store Base64 in hidden field
+            customerPreview.src = base64;
+            customerPreview.style.display = 'block';
+
+            if (customerStream) {
+                customerStream.getTracks().forEach(track => track.stop()); 
+            }
+            customerVideo.style.display = 'none';
+            customerCaptureBtn.style.display = 'none';
+            customerFileInput.value = ''; // Ensure file input is cleared after capture
+        });
+
+        // Clear Base64 input if user selects a file after opening camera
+        customerFileInput.addEventListener('change', () => {
+            customerBase64Input.value = ''; // Clear hidden Base64 input
+            customerPreview.style.display = 'none'; // Hide preview
+            if (customerStream) { // Stop camera if running
+                customerStream.getTracks().forEach(track => track.stop());
+                customerVideo.style.display = 'none';
+                customerCaptureBtn.style.display = 'none';
+            }
+            if (customerFileInput.files.length > 0) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    customerPreview.src = e.target.result;
+                    customerPreview.style.display = 'block';
+                };
+                reader.readAsDataURL(customerFileInput.files[0]);
+            }
+        });
+
+
+        // ID camera
+        const idOpenBtn = document.getElementById('openIdCameraBtn'); 
+        const idVideo = document.getElementById('idVideo'); 
+        const idCaptureBtn = document.getElementById('captureIdBtn'); 
+        const idPreview = document.getElementById('idPreview'); 
+        const idBase64Input = document.getElementById('idDocumentPictureBase64'); // Renamed for clarity
+        const idFileInput = document.getElementById('idDocumentPicture'); // Added reference to file input
+        let idStream = null;
+
+        idOpenBtn.addEventListener('click', async () => {
+            try {
+                idStream = await navigator.mediaDevices.getUserMedia({ video: true });
+                idVideo.srcObject = idStream;
+                idVideo.style.display = 'block';
+                idCaptureBtn.style.display = 'inline-block';
+                idPreview.style.display = 'none'; // Hide preview when opening camera
+                idFileInput.value = ''; // Clear file input when camera is opened
+            } catch (err) {
+                console.error("Error accessing ID camera: ", err);
+                alert("Camera access denied or not available. Please allow camera access or choose a file.");
+            }
+        });
+
+        idCaptureBtn.addEventListener('click', () => {
+            const canvas = document.createElement('canvas');
+            canvas.width = idVideo.videoWidth;
+            canvas.height = idVideo.videoHeight;
+            canvas.getContext('2d').drawImage(idVideo, 0, 0);
+            const base64 = canvas.toDataURL('image/png');
+            idBase64Input.value = base64; // Still store Base64 in hidden field
+            idPreview.src = base64;
+            idPreview.style.display = 'block';
+
+            if (idStream) {
+                idStream.getTracks().forEach(track => track.stop()); 
+            }
+            idVideo.style.display = 'none';
+            idCaptureBtn.style.display = 'none';
+            idFileInput.value = ''; // Ensure file input is cleared after capture
+        });
+
+        // Clear Base64 input if user selects a file after opening camera
+        idFileInput.addEventListener('change', () => {
+            idBase64Input.value = ''; // Clear hidden Base64 input
+            idPreview.style.display = 'none'; // Hide preview
+            if (idStream) { // Stop camera if running
+                idStream.getTracks().forEach(track => track.stop());
+                idVideo.style.display = 'none';
+                idCaptureBtn.style.display = 'none';
+            }
+            if (idFileInput.files.length > 0) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    idPreview.src = e.target.result;
+                    idPreview.style.display = 'block';
+                };
+                reader.readAsDataURL(idFileInput.files[0]);
+            }
+        });
+    });
+    </script>
+</body>
+</html>

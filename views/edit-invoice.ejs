@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Invoice</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #eef2f7;
+      padding: 30px;
+    }
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      color: #333;
+    }
+    input, select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    .actions {
+      text-align: center;
+      margin-top: 25px;
+    }
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .btn-update {
+      background-color: #3498db;
+    }
+    .btn-cancel {
+      background-color: #95a5a6;
+      margin-left: 10px;
+    }
+    #customProductGroup {
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+
+  <script>
+    function handleProductChange(select) {
+      const customGroup = document.getElementById("customProductGroup");
+      if (select.value === "Other") {
+        customGroup.style.display = "block";
+      } else {
+        customGroup.style.display = "none";
+      }
+    }
+
+    window.onload = function () {
+      const productSelect = document.querySelector("select[name='productSelect']");
+      if (productSelect.value === "Other") {
+        document.getElementById("customProductGroup").style.display = "block";
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <h2>Edit Invoice</h2>
+
+  <form action="/invoice/update/<%= invoice.invoiceNumber %>" method="POST">
+    <label>Customer Name:</label>
+    <input type="text" name="customerName" value="<%= invoice.customerName %>" required>
+
+    <label>Customer Phone:</label>
+    <input type="text" name="customerPhone" value="<%= invoice.customerPhone %>" required>
+
+    <label>Product:</label>
+    <select name="productSelect" onchange="handleProductChange(this)" required>
+      <option value="">-- Choose from list --</option>
+      <% productList.forEach(product => { %>
+        <option value="<%= product %>" <%= invoice.product === product ? 'selected' : '' %>><%= product %></option>
+      <% }); %>
+      <option value="Other" <%= !productList.includes(invoice.product) ? 'selected' : '' %>>Other</option>
+    </select>
+
+    <div id="customProductGroup">
+      <label>Other Product Name:</label>
+      <input type="text" name="customProduct" value="<%= !productList.includes(invoice.product) ? invoice.product : '' %>">
+    </div>
+
+    <label>Quantity:</label>
+    <input type="number" step="0.01" name="quantity" value="<%= invoice.quantity %>" required>
+
+    <label>Unit:</label>
+    <select name="unit" required>
+      <option value="kg" <%= invoice.unit === 'kg' ? 'selected' : '' %>>Kg</option>
+      <option value="pieces" <%= invoice.unit === 'pieces' ? 'selected' : '' %>>Pieces</option>
+    </select>
+
+    <label>Price per Unit:</label>
+    <input type="number" step="0.01" name="price" value="<%= invoice.price %>" required>
+
+    <label>Salesman Name:</label>
+    <input type="text" name="salesman" value="<%= invoice.salesman %>" required>
+
+    <div class="actions">
+      <button type="submit" class="btn btn-update">Update Invoice</button>
+      <a href="/invoice/all" class="btn btn-cancel">Cancel</a>
+    </div>
+  </form>
+</body>
+</html>

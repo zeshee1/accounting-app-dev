@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .invoice-box {
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #eee;
+            box-shadow: 0 0 10px rgba(32, 0, 119, 0.15);
+        }
+        .company-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .company-info h2 {
+            margin: 0;
+        }
+        .details, .products, .footer {
+            width: 100%;
+            margin-top: 20px;
+        }
+        .products th, .products td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .footer {
+            text-align: right;
+            margin-top: 30px;
+        }
+
+        .pdf-btn, .print-btn {
+            display: block;
+            margin: 20px auto;
+            width: 200px;
+            text-align: center;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+        }
+
+        .pdf-btn {
+            background-color: #2980b9;
+        }
+
+        .print-btn {
+            background-color: #388e3c; /* Green print button */
+        }
+
+        @media print {
+            .pdf-btn, .print-btn {
+                display: none;
+            }
+            body {
+                margin: 0;
+            }
+            .invoice-box {
+                max-width: 100%;
+                border: none;
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a class="pdf-btn" href="/invoice/pdf/<%= invoice.invoiceNumber %>" target="_blank">Export as PDF</a>
+
+    <button class="print-btn" onclick="window.print()">Print Invoice</button>
+
+    <div class="invoice-box">
+        <div class="company-info">
+            <h2>Saddiqi Brothers Import Export Company</h2>
+            <p>Godown No.314 Kolu Wala Stop, Gujranwala.</p>
+            <p>Imran Saddiqi: 0345-7268345, 0300-7329534 | M. Sharif Saddiqi: 0034679139699</p>
+            <p>Email: saddiqibrothers@gmail.com</p>
+        </div>
+
+        <div class="details">
+            <p><strong>Invoice #:</strong> <%= invoice.invoiceNumber %></p>
+            <p><strong>Date:</strong> <%= invoice.date %></p>
+            <p><strong>Customer Name:</strong> <%= invoice.customerName %></p>
+            <p><strong>Customer Phone:</strong> <%= invoice.customerPhone %></p>
+            <p><strong>Salesman Name:</strong> <%= invoice.salesman %></p>
+        </div>
+
+        <table class="products">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Unit</th>
+                    <th>Unit Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% let grandTotal = 0; %>
+                <% if (invoice.products && invoice.products.length > 0) { %>
+                    <% invoice.products.forEach(product => {
+                        const total = product.quantity * product.price;
+                        grandTotal += total;
+                    %>
+                    <tr>
+                        <td><%= product.product === 'Other' ? product.customProduct : product.product %></td>
+                        <td><%= product.quantity %></td>
+                        <td><%= product.unit %></td>
+                        <td>Rs. <%= product.price.toFixed(2) %></td>
+                        <td>Rs. <%= total.toFixed(2) %></td>
+                    </tr>
+                    <% }); %>
+                <% } else if (invoice.quantity && invoice.price) { %>
+                    <tr>
+                        <td><%= invoice.product %></td>
+                        <td><%= invoice.quantity %></td>
+                        <td><%= invoice.unit %></td>
+                        <td>Rs. <%= invoice.price.toFixed(2) %></td>
+                        <td>Rs. <%= (invoice.quantity * invoice.price).toFixed(2) %></td>
+                    </tr>
+                    <% grandTotal += (invoice.quantity * invoice.price); %>
+                <% } %>
+            </tbody>
+        </table>
+
+        <div class="footer">
+            <p><strong>Total Amount:</strong> Rs. <%= grandTotal.toFixed(2) %></p>
+            <p><strong>Salesman Signature:</strong> ________________________</p>
+        </div>
+    </div>
+
+</body>
+</html>

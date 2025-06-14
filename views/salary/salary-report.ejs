@@ -1,0 +1,59 @@
+<%- include("../partials/header") %>
+<div class="container">
+  <h2 class="text-center my-3">Salary Management</h2>
+
+  <!-- Add Employee Form -->
+  <form method="POST" action="/salary/add" class="row mb-4">
+    <div class="col-md-5">
+      <input type="text" name="name" placeholder="Employee Name" class="form-control" required />
+    </div>
+    <div class="col-md-5">
+      <input type="number" name="salary" placeholder="Monthly Salary" class="form-control" required />
+    </div>
+    <div class="col-md-2">
+      <button type="submit" class="btn btn-primary w-100">Add Employee</button>
+    </div>
+  </form>
+
+  <!-- Salary Table -->
+  <h4>Employee Salary Report</h4>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Employee</th>
+        <th>Month</th>
+        <th>Present</th>
+        <th>Total</th>
+        <th>Net Salary</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% salaries.forEach(s => { %>
+        <tr>
+          <td><%= s.name %></td>
+          <td><%= s.month %></td>
+          <td><%= s.present_days %></td>
+          <td><%= s.total_days %></td>
+          <td>Rs. <%= s.net_salary %></td>
+          <td>
+            <% if (s.status === "Paid") { %>
+              <span class="text-success fw-bold">Paid</span>
+            <% } else { %>
+              <span class="text-danger">Unpaid</span>
+            <% } %>
+          </td>
+          <td>
+            <% if (s.status === "Unpaid") { %>
+              <a href="/salary/pay-salary/<%= s.employee_id %>/<%= s.month %>" class="btn btn-sm btn-warning">Pay Now</a>
+            <% } else { %>
+              Paid on <%= s.paid_on %>
+            <% } %>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>
+<%- include("../partials/footer") %>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Invoices | Saddiqi Brothers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Basic styling for non-styled elements */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e9ecef;
+            color: #495057;
+            display: flex;
+            min-height: 100vh;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 30px;
+            transform: perspective(500px) translateZ(0px);
+            transition: transform 0.3s ease;
+        }
+        .content:hover {
+            transform: perspective(500px) translateZ(3px);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .search-bar {
+            max-width: 500px;
+            margin: 0 auto 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .search-bar input {
+            flex: 1;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .search-bar input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+        .btn {
+            display: inline-block;
+            padding: 8px 12px;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            margin: 2px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-view {
+            background-color: #007bff;
+        }
+        .btn-view:hover {
+            background-color: #0056b3;
+        }
+        .btn-edit {
+            background-color: #28a745;
+        }
+        .btn-edit:hover {
+            background-color: #218838;
+        }
+        .btn-delete {
+            background-color: #dc3545;
+        }
+        .btn-delete:hover {
+            background-color: #c82333;
+        }
+        .invoice-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        .invoice-table th, .invoice-table td {
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .invoice-table th {
+            background-color: #f8f9fa;
+            color: #495057;
+            font-weight: bold;
+        }
+        .invoice-table tbody tr:nth-of-type(odd) {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+    </style>
+
+    <script>
+        function searchInvoices() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const rows = document.querySelectorAll('.invoice-row');
+            rows.forEach(row => {
+                const invoiceNumber = row.querySelector('.invoice-number').innerText.toLowerCase();
+                const customerName = row.querySelector('.customer-name').innerText.toLowerCase();
+                const productNames = row.querySelector('.product-names').innerText.toLowerCase();
+                if (invoiceNumber.includes(input) || customerName.includes(input) || productNames.includes(input)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h3 class="sidebar-title"><i class="fas fa-tachometer-alt mr-2"></i> Menu</h3>
+        <a href="/"><i class="fas fa-home"></i> Home</a>
+        <a href="/sales"><i class="fas fa-shopping-cart"></i> Sales</a>
+        <a href="/purchase/all"><i class="fas fa-truck"></i> Purchase Summary</a>
+        <a href="/purchase"><i class="fas fa-truck"></i> Add Purchase</a>
+        <a href="/invoice"><i class="fas fa-file-invoice"></i> Create Invoice</a>
+        <a href="/invoice/all" class="active"><i class="fas fa-list-alt"></i> View All Invoices</a>
+        <a href="/expense"><i class="fas fa-coins"></i> Add Expense</a>
+        <a href="/expense/all"><i class="fas fa-list-ul"></i> View Expenses</a>
+        <a href="/summary-form"><i class="fas fa-calendar-day"></i> Daily Summary</a>
+        <a href="/customers"><i class="fas fa-users"></i> Customer Details</a>
+    </div>
+
+    <div class="content">
+        <h1>All Invoices</h1>
+
+        <div class="search-bar">
+            <input type="text" id="searchInput" onkeyup="searchInvoices()" placeholder="Search by Invoice, Customer, or Product">
+        </div>
+
+        <table class="invoice-table">
+            <thead>
+                <tr>
+                    <th>Invoice #</th>
+                    <th>Date</th>
+                    <th>Customer</th>
+                    <th>Products</th>
+                    <th>Total Amount</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% invoices.forEach(invoice => { %>
+                    <tr class="invoice-row">
+                        <td class="invoice-number"><%= invoice.invoiceNumber %></td>
+                        <td><%= invoice.date %></td>
+                        <td class="customer-name"><%= invoice.customerName %></td>
+                        <td class="product-names">
+                            <ul style="list-style: none; padding: 0; margin: 0;">
+                                <% if (invoice.products && invoice.products.length > 0) { %>
+                                    <% invoice.products.forEach(product => { %>
+                                        <li><%= product.product === 'Other' ? product.customProduct : product.product %></li>
+                                    <% }); %>
+                                <% } else { %>
+                                    <li>No products added</li>
+                                <% } %>
+                            </ul>
+                        </td>
+                        <td>
+                            Rs.
+                            <%= invoice.products && invoice.products.length > 0 ? invoice.products.reduce((sum, p) => sum + (parseFloat(p.quantity) * parseFloat(p.price)), 0).toFixed(2) : '0.00' %>
+                        </td>
+                        <td>
+                            <a class="btn btn-view" href="/invoice/<%= invoice.id %>">View</a>
+                            <form action="/invoice/edit/<%= invoice.id %>" method="get" style="display:inline;">
+                                <button type="submit" class="btn btn-edit">Edit</button>
+                            </form>
+                            <form action="/invoice/delete/<%= invoice.id %>" method="post" style="display:inline;">
+                                <button type="submit" class="btn btn-delete" onclick="return confirm('Are you sure?')">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

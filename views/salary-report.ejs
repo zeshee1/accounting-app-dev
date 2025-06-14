@@ -1,0 +1,45 @@
+<%- include("../partials/header") %>
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Employee Management</h2>
+
+  <!-- Add New Employee Form -->
+  <div class="card mb-4">
+    <div class="card-header">Add New Employee</div>
+    <div class="card-body">
+      <form action="/salary/add-employee" method="POST">
+        <div class="row">
+          <div class="col-md-5">
+            <input type="text" name="name" class="form-control" placeholder="Employee Name" required />
+          </div>
+          <div class="col-md-4">
+            <input type="number" name="salary" class="form-control" placeholder="Monthly Salary" required />
+          </div>
+          <div class="col-md-3">
+            <button class="btn btn-success w-100">Add Employee</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Employee Table -->
+  <table class="table table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Monthly Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% employees.forEach(emp => { %>
+        <tr>
+          <td><%= emp.id %></td>
+          <td><%= emp.name %></td>
+          <td>Rs. <%= emp.salary %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>
+<%- include("../partials/footer") %>
